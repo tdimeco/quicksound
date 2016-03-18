@@ -20,6 +20,7 @@ class TransformerFilePathToName: NSValueTransformer {
     
     override func transformedValue(value: AnyObject?) -> AnyObject? {
         guard let filePath = value as? String else { return nil }
-        return NSURL(string: filePath)?.lastPathComponent
+        guard let lastPathComponent = NSURL(string: filePath)?.lastPathComponent else { return nil }
+        return NSString(string: lastPathComponent).stringByDeletingPathExtension
     }
 }

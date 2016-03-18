@@ -47,7 +47,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Blr-KK-Txb">
-                                                        <rect key="frame" x="8" y="7" width="221" height="19"/>
+                                                        <rect key="frame" x="29" y="7" width="200" height="19"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Sound name" id="zgU-2Z-lTN">
                                                             <font key="font" metaFont="systemThin" size="16"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -61,9 +61,19 @@
                                                             </binding>
                                                         </connections>
                                                     </textField>
+                                                    <textField horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z1e-do-FgY">
+                                                        <rect key="frame" x="8" y="8" width="17" height="18"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="♬" id="3dT-AU-yAM">
+                                                            <font key="font" metaFont="system" size="14"/>
+                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="Blr-KK-Txb" firstAttribute="leading" secondItem="33t-ly-sub" secondAttribute="leading" constant="10" id="INK-5P-Vjs"/>
+                                                    <constraint firstItem="z1e-do-FgY" firstAttribute="leading" secondItem="33t-ly-sub" secondAttribute="leading" constant="10" id="875-UA-1Vl"/>
+                                                    <constraint firstItem="Blr-KK-Txb" firstAttribute="leading" secondItem="z1e-do-FgY" secondAttribute="trailing" constant="8" id="H1n-SL-88d"/>
+                                                    <constraint firstItem="z1e-do-FgY" firstAttribute="centerY" secondItem="33t-ly-sub" secondAttribute="centerY" id="TWe-Gg-WaC"/>
                                                     <constraint firstAttribute="trailing" secondItem="Blr-KK-Txb" secondAttribute="trailing" constant="10" id="cAl-1W-xlI"/>
                                                     <constraint firstItem="Blr-KK-Txb" firstAttribute="centerY" secondItem="33t-ly-sub" secondAttribute="centerY" id="rQN-if-6pU"/>
                                                 </constraints>
