@@ -14,6 +14,8 @@
 		92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D871C9C506B004F13BB /* PopoverViewController.swift */; };
 		92BE1D8A1C9C506B004F13BB /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BE1D881C9C506B004F13BB /* PopoverViewController.xib */; };
 		92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */; };
+		E96D54061C9CAC05006286EB /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D54051C9CAC05006286EB /* Sound.swift */; };
+		E96D54091C9CAE6E006286EB /* TransformerFilePathToName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		92BE1D871C9C506B004F13BB /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		92BE1D881C9C506B004F13BB /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerIsNotEmpty.swift; sourceTree = "<group>"; };
+		E96D54051C9CAC05006286EB /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerFilePathToName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 				92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */,
 				92BE1D8C1C9C5079004F13BB /* Status Item */,
 				92BE1D8B1C9C506E004F13BB /* Popover */,
+				E96D54071C9CAC08006286EB /* Model */,
 				92BE1D921C9C6E91004F13BB /* Utils */,
 				92BE1D8D1C9C508C004F13BB /* Resources */,
 				92BE1D841C9C4BE2004F13BB /* Supporting Files */,
@@ -106,8 +111,17 @@
 			isa = PBXGroup;
 			children = (
 				92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */,
+				E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		E96D54071C9CAC08006286EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E96D54051C9CAC05006286EB /* Sound.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,8 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E96D54061C9CAC05006286EB /* Sound.swift in Sources */,
 				92BE1D861C9C4CA5004F13BB /* StatusItemController.swift in Sources */,
 				92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */,
+				E96D54091C9CAE6E006286EB /* TransformerFilePathToName.swift in Sources */,
 				92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */,
 				92BE1D781C9C4B9B004F13BB /* AppDelegate.swift in Sources */,
 			);
@@ -325,6 +341,7 @@
 				92BE1D831C9C4B9B004F13BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

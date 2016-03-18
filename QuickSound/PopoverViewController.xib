@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PopoverViewController" customModule="QuickSound" customModuleProvider="target">
             <connections>
+                <outlet property="arrayController" destination="XaV-0I-8yP" id="c4M-Bl-uyb"/>
                 <outlet property="view" destination="at7-VE-jKz" id="1xV-xL-aJw"/>
             </connections>
         </customObject>
@@ -21,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="240" height="211"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="33" rowSizeStyle="automatic" viewBased="YES" id="Mmb-31-dOi">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" columnResizing="NO" autosaveColumns="NO" rowHeight="33" rowSizeStyle="automatic" viewBased="YES" id="Mmb-31-dOi">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
@@ -52,6 +53,13 @@
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="33t-ly-sub" name="value" keyPath="objectValue.filePath" id="s62-eV-wam">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">TransformerFilePathToName</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -65,10 +73,13 @@
                                             </tableCellView>
                                         </prototypeCellViews>
                                         <connections>
-                                            <binding destination="XaV-0I-8yP" name="value" keyPath="arrangedObjects" id="tbE-Us-apJ"/>
+                                            <binding destination="XaV-0I-8yP" name="value" keyPath="arrangedObjects" id="qET-AT-6Hc"/>
                                         </connections>
                                     </tableColumn>
                                 </tableColumns>
+                                <connections>
+                                    <action trigger="doubleAction" selector="tableViewRowDoubleClicked:" target="-2" id="frw-0i-Hfw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -86,7 +97,7 @@
                     <rect key="frame" x="72" y="119" width="97" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Aucun son" id="Eop-gp-PbZ">
                         <font key="font" metaFont="systemLight" size="20"/>
-                        <color key="textColor" white="0.65032453913437682" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
@@ -115,7 +126,7 @@
                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                     </buttonCell>
                     <connections>
-                        <action selector="add:" target="XaV-0I-8yP" id="mgq-ne-sUz"/>
+                        <action selector="addSoundAction:" target="-2" id="r56-K6-seI"/>
                         <binding destination="XaV-0I-8yP" name="enabled" keyPath="canAdd" id="gFR-R6-3EF"/>
                     </connections>
                 </button>
@@ -151,7 +162,7 @@
                     </popUpButtonCell>
                 </popUpButton>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="X6I-WK-8R9">
-                    <rect key="frame" x="40" y="0.0" width="20" height="28"/>
+                    <rect key="frame" x="38" y="0.0" width="20" height="28"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="Hmo-if-cIh"/>
                     </constraints>
@@ -174,7 +185,7 @@ CA
                 <constraint firstAttribute="bottom" secondItem="7oC-em-Yi8" secondAttribute="bottom" constant="4" id="AkW-Qc-TrF"/>
                 <constraint firstItem="X6I-WK-8R9" firstAttribute="top" secondItem="ch7-h8-dHD" secondAttribute="bottom" id="FfZ-9H-D0m"/>
                 <constraint firstAttribute="bottom" secondItem="X6I-WK-8R9" secondAttribute="bottom" id="Paj-b8-noA"/>
-                <constraint firstItem="X6I-WK-8R9" firstAttribute="leading" secondItem="tb3-Le-g5B" secondAttribute="trailing" constant="10" id="QF1-v4-q5i"/>
+                <constraint firstItem="X6I-WK-8R9" firstAttribute="leading" secondItem="tb3-Le-g5B" secondAttribute="trailing" constant="8" id="QF1-v4-q5i"/>
                 <constraint firstItem="tb3-Le-g5B" firstAttribute="leading" secondItem="at7-VE-jKz" secondAttribute="leading" constant="10" id="TpS-UF-oEL"/>
                 <constraint firstItem="ch7-h8-dHD" firstAttribute="top" secondItem="B2T-wf-e0a" secondAttribute="bottom" id="TqP-Wl-iAt"/>
                 <constraint firstAttribute="trailing" secondItem="7oC-em-Yi8" secondAttribute="trailing" constant="8" id="a52-ge-SeC"/>
@@ -190,8 +201,11 @@ CA
             <point key="canvasLocation" x="438" y="441"/>
         </customView>
         <arrayController avoidsEmptySelection="NO" id="XaV-0I-8yP">
+            <declaredKeys>
+                <string>filePath</string>
+            </declaredKeys>
             <connections>
-                <binding destination="mbe-IX-0Aw" name="contentArray" keyPath="values.sounds" id="2u0-rm-3qF"/>
+                <binding destination="mbe-IX-0Aw" name="contentArray" keyPath="values.sounds" id="H8e-Pc-2sm"/>
             </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="mbe-IX-0Aw"/>
