@@ -50,7 +50,7 @@
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Blr-KK-Txb">
                                                         <rect key="frame" x="29" y="7" width="200" height="19"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Sound name" id="zgU-2Z-lTN">
-                                                            <font key="font" metaFont="systemThin" size="16"/>
+                                                            <font key="font" metaFont="systemLight" size="16"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -105,9 +105,9 @@
                     </scroller>
                 </scrollView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MG5-Tr-YmP">
-                    <rect key="frame" x="72" y="119" width="97" height="24"/>
+                    <rect key="frame" x="71" y="119" width="99" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Aucun son" id="Eop-gp-PbZ">
-                        <font key="font" metaFont="systemLight" size="20"/>
+                        <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
