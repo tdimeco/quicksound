@@ -7,6 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="PopoverViewController" customModule="QuickSound" customModuleProvider="target">
             <connections>
                 <outlet property="arrayController" destination="XaV-0I-8yP" id="c4M-Bl-uyb"/>
+                <outlet property="tableView" destination="Mmb-31-dOi" id="uha-ia-28t"/>
                 <outlet property="view" destination="at7-VE-jKz" id="1xV-xL-aJw"/>
             </connections>
         </customObject>
@@ -16,13 +17,13 @@
             <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="allowed" translatesAutoresizingMaskIntoConstraints="NO" id="B2T-wf-e0a">
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="allowed" translatesAutoresizingMaskIntoConstraints="NO" id="B2T-wf-e0a">
                     <rect key="frame" x="0.0" y="29" width="240" height="211"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="rVb-bq-ZVp">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="211"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" columnResizing="NO" autosaveColumns="NO" rowHeight="33" rowSizeStyle="automatic" viewBased="YES" id="Mmb-31-dOi">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" columnResizing="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="Mmb-31-dOi">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
@@ -161,8 +162,7 @@
                                     </connections>
                                 </menuItem>
                                 <menuItem isSeparatorItem="YES" id="WOd-F6-Gbx"/>
-                                <menuItem title="Quitter QuickSound" id="TGm-PP-Ulz">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                <menuItem title="Quitter QuickSound" keyEquivalent="q" id="TGm-PP-Ulz">
                                     <connections>
                                         <action selector="quitApplication:" target="-2" id="1By-3y-w9t"/>
                                     </connections>

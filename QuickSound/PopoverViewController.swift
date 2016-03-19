@@ -7,12 +7,22 @@
 //
 
 import Cocoa
-import CoreAudio
 
 
 class PopoverViewController: NSViewController {
     
     @IBOutlet var arrayController: NSArrayController!
+    @IBOutlet weak var tableView: NSTableView!
+    
+    
+    // MARK: - Lifecycle
+    
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        
+        // Deselect table view
+        self.tableView.deselectAll(nil)
+    }
     
     
     // MARK: - UI actions
@@ -32,7 +42,7 @@ class PopoverViewController: NSViewController {
                 let alert = NSAlert()
                 alert.messageText = "Impossible de lire le son"
                 alert.informativeText = "Le fichier est invalide ou introuvable."
-                alert.alertStyle = .WarningAlertStyle
+                alert.alertStyle = .CriticalAlertStyle
                 alert.runModal()
             }
         }
