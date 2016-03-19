@@ -71,10 +71,10 @@ class PopoverViewController: NSViewController {
     }
     
     @IBAction func showAboutWindow(sender: AnyObject) {
-        // TODO
+        NSApplication.sharedApplication().orderFrontStandardAboutPanel(sender)
     }
     
     @IBAction func quitApplication(sender: AnyObject) {
-        NSApplication.sharedApplication().terminate(nil)
+        NSApplication.sharedApplication().terminate(sender)
     }
 }
