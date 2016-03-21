@@ -28,7 +28,7 @@ class StatusItemController: NSObject {
         let statusButton = self.statusItem.button!
         statusButton.title = "♬"
         statusButton.target = self
-        statusButton.action = "statusItemClicked:"
+        statusButton.action = #selector(StatusItemController.statusItemClicked(_:))
         statusButton.sendActionOn(Int(NSEventMask.LeftMouseUpMask.rawValue | NSEventMask.RightMouseUpMask.rawValue))
         
         // Setup popover

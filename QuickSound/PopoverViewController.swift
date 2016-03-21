@@ -29,7 +29,8 @@ class PopoverViewController: NSViewController {
     
     @IBAction func tableViewRowDoubleClicked(tableView: NSTableView) {
         guard tableView.clickedRow >= 0 else { return }
-        guard let soundDic = self.arrayController.arrangedObjects[tableView.clickedRow] as? NSDictionary else { return }
+        guard let arrangedObjects = self.arrayController.arrangedObjects as? [AnyObject] else { return }
+        guard let soundDic = arrangedObjects[tableView.clickedRow] as? NSDictionary else { return }
         guard let soundObj = Sound(dictionary: soundDic) else { return }
         
         // Play sound
