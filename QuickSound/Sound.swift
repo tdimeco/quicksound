@@ -20,8 +20,15 @@ class Sound: NSManagedObject {
         if let entityDescription = NSEntityDescription.entityForName("Sound", inManagedObjectContext: moc) {
             object = Sound(entity: entityDescription, insertIntoManagedObjectContext: moc)
             object?.filePath = filepath
+            object?.name = Utils.filePathToFileNameWithoutExtension(filepath)
         }
         return object
     }
     
+    
+    // MARK: - Sort descriptors
+    
+    static func alphabeticalSortDescriptor() -> NSSortDescriptor {
+        return NSSortDescriptor(key: "name", ascending: true)
+    }
 }

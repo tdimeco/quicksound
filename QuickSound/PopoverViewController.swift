@@ -24,6 +24,7 @@ class PopoverViewController: NSViewController {
         
         // Init array controller
         self.soundsArrayController.managedObjectContext = AppDelegate.dataManager.managedObjectContext
+        self.soundsArrayController.sortDescriptors = [Sound.alphabeticalSortDescriptor()]
         self.soundsArrayController.prepareContent()
     }
     
@@ -82,8 +83,12 @@ class PopoverViewController: NSViewController {
         }
     }
     
+    @IBAction func removeSoundAction(sender: AnyObject) {
+        self.soundsArrayController.remove(sender)
+        AppDelegate.dataManager.saveContext()
+    }
+    
     @IBAction func autoRepeatClicked(sender: AnyObject) {
-        
         AppDelegate.dataManager.saveContext()
     }
     

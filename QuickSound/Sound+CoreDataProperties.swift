@@ -15,6 +15,7 @@ import CoreData
 extension Sound {
 
     @NSManaged var filePath: String?
+    @NSManaged var name: String?
     @NSManaged var repeatEnabled: NSNumber?
 
 }

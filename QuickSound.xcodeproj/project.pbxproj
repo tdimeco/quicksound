@@ -18,7 +18,7 @@
 		92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D871C9C506B004F13BB /* PopoverViewController.swift */; };
 		92BE1D8A1C9C506B004F13BB /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BE1D881C9C506B004F13BB /* PopoverViewController.xib */; };
 		92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */; };
-		E96D54091C9CAE6E006286EB /* TransformerFilePathToName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */; };
+		E942CF291CA1FBF8004FBCD2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942CF281CA1FBF8004FBCD2 /* Utils.swift */; };
 		E9FC49131C9DD93B001C35B3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FC49121C9DD93B001C35B3 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		92BE1D871C9C506B004F13BB /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		92BE1D881C9C506B004F13BB /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerIsNotEmpty.swift; sourceTree = "<group>"; };
-		E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerFilePathToName.swift; sourceTree = "<group>"; };
+		E942CF281CA1FBF8004FBCD2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E9FC49121C9DD93B001C35B3 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,8 +118,8 @@
 		92BE1D921C9C6E91004F13BB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E942CF281CA1FBF8004FBCD2 /* Utils.swift */,
 				92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */,
-				E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */,
 				2228E2FC1CA19DF30041056A /* TransformerIsChecked.swift */,
 			);
 			name = Utils;
@@ -221,8 +221,8 @@
 				92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */,
 				2228E3001CA1B0D00041056A /* Model.xcdatamodeld in Sources */,
 				2228E2FD1CA19DF30041056A /* TransformerIsChecked.swift in Sources */,
-				E96D54091C9CAE6E006286EB /* TransformerFilePathToName.swift in Sources */,
 				2228E3051CA1B1CE0041056A /* Sound+CoreDataProperties.swift in Sources */,
+				E942CF291CA1FBF8004FBCD2 /* Utils.swift in Sources */,
 				92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */,
 				2228E3061CA1B1CE0041056A /* Sound.swift in Sources */,
 				92BE1D781C9C4B9B004F13BB /* AppDelegate.swift in Sources */,

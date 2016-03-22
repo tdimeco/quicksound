@@ -14,23 +14,23 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="at7-VE-jKz">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+            <rect key="frame" x="0.0" y="0.0" width="275" height="275"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="allowed" translatesAutoresizingMaskIntoConstraints="NO" id="B2T-wf-e0a">
-                    <rect key="frame" x="0.0" y="29" width="240" height="211"/>
+                    <rect key="frame" x="0.0" y="29" width="275" height="246"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="rVb-bq-ZVp">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="211"/>
+                        <rect key="frame" x="0.0" y="0.0" width="275" height="246"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" columnResizing="NO" autosaveColumns="NO" rowHeight="33" rowSizeStyle="automatic" viewBased="YES" id="Mmb-31-dOi">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="0.0"/>
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="246"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="237" minWidth="40" maxWidth="1000" id="nyi-cG-OrX">
+                                    <tableColumn width="272" minWidth="40" maxWidth="1000" id="nyi-cG-OrX">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -44,20 +44,20 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="33t-ly-sub">
-                                                <rect key="frame" x="1" y="1" width="237" height="33"/>
+                                                <rect key="frame" x="1" y="1" width="272" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Blr-KK-Txb">
-                                                        <rect key="frame" x="29" y="7" width="183" height="19"/>
+                                                        <rect key="frame" x="29" y="7" width="218" height="19"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Sound name" id="zgU-2Z-lTN">
                                                             <font key="font" metaFont="systemLight" size="16"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="33t-ly-sub" name="value" keyPath="objectValue.filePath" id="s62-eV-wam">
+                                                            <binding destination="33t-ly-sub" name="value" keyPath="objectValue.name" id="Ona-Qe-XOe">
                                                                 <dictionary key="options">
-                                                                    <string key="NSValueTransformerName">TransformerFilePathToName</string>
+                                                                    <string key="NSNullPlaceholder">&lt;No name&gt;</string>
                                                                 </dictionary>
                                                             </binding>
                                                         </connections>
@@ -71,13 +71,13 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3UO-en-eQC">
-                                                        <rect key="frame" x="218" y="9" width="11" height="16"/>
+                                                        <rect key="frame" x="253" y="9" width="11" height="16"/>
                                                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRefreshTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="m00-4s-AuG">
                                                             <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="autoRepeatClicked:" target="-2" id="RMF-EF-W7V"/>
+                                                            <action selector="autoRepeatClicked:" target="-2" id="LXi-yl-sxd"/>
                                                             <binding destination="33t-ly-sub" name="value" keyPath="objectValue.repeatEnabled" id="VxC-2G-ACn"/>
                                                         </connections>
                                                     </button>
@@ -103,6 +103,7 @@
                                 </tableColumns>
                                 <connections>
                                     <action trigger="doubleAction" selector="tableViewRowDoubleClicked:" target="-2" id="frw-0i-Hfw"/>
+                                    <outlet property="delegate" destination="-2" id="xoL-JS-aWR"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -118,7 +119,7 @@
                     </scroller>
                 </scrollView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MG5-Tr-YmP">
-                    <rect key="frame" x="71" y="119" width="99" height="24"/>
+                    <rect key="frame" x="88" y="136" width="99" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Aucun son" id="Eop-gp-PbZ">
                         <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -133,7 +134,7 @@
                     </connections>
                 </textField>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ch7-h8-dHD">
-                    <rect key="frame" x="0.0" y="26" width="240" height="5"/>
+                    <rect key="frame" x="0.0" y="26" width="275" height="5"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
@@ -155,7 +156,7 @@
                     </connections>
                 </button>
                 <popUpButton toolTip="More..." translatesAutoresizingMaskIntoConstraints="NO" id="7oC-em-Yi8">
-                    <rect key="frame" x="194" y="4" width="38" height="21"/>
+                    <rect key="frame" x="229" y="4" width="38" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="dWb-lU-mQc"/>
                         <constraint firstAttribute="width" constant="38" id="fKb-dc-8He"/>
@@ -197,7 +198,7 @@ CA
 </string>
                     </buttonCell>
                     <connections>
-                        <action selector="remove:" target="XaV-0I-8yP" id="Ma8-fT-DC9"/>
+                        <action selector="removeSoundAction:" target="-2" id="dvV-rx-3wU"/>
                         <binding destination="XaV-0I-8yP" name="enabled" keyPath="canRemove" id="FNL-Yw-oVH"/>
                     </connections>
                 </button>
