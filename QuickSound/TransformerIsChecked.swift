@@ -8,10 +8,15 @@
 
 import Cocoa
 
+
 @objc(TransformerIsChecked)
 class TransformerIsChecked: NSValueTransformer {
-
+    
     // MARK: - Value transformer
+    
+    override class func allowsReverseTransformation() -> Bool {
+        return true
+    }
     
     override class func transformedValueClass() -> AnyClass {
         return NSNumber.self
@@ -23,9 +28,7 @@ class TransformerIsChecked: NSValueTransformer {
     }
     
     override func reverseTransformedValue(value: AnyObject?) -> AnyObject? {
-        guard let state = value as? Int else { return nil }
-        return NSNumber(bool: state == NSOnState)
+        guard let isOn = value as? NSNumber else { return nil }
+        return isOn.boolValue ? NSOnState : NSOffState
     }
-
-    
 }

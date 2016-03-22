@@ -11,9 +11,9 @@ import CoreData
 
 
 class Sound: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
+    
+    // MARK: - Creation
+    
     static func createSoundInContext(filepath: String, inMoc moc: NSManagedObjectContext) -> Sound? {
         var object: Sound?
         

@@ -11,13 +11,21 @@ import Cocoa
 
 class PopoverViewController: NSViewController {
     
-    @IBOutlet var arrayController: NSArrayController!
+    @IBOutlet var soundsArrayController: NSArrayController!
     @IBOutlet weak var tableView: NSTableView!
     
     private var soundPlayer:[NSSound] = []
     
     
     // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Init array controller
+        self.soundsArrayController.managedObjectContext = AppDelegate.dataManager.managedObjectContext
+        self.soundsArrayController.prepareContent()
+    }
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
@@ -26,17 +34,12 @@ class PopoverViewController: NSViewController {
         self.tableView.deselectAll(nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.arrayController.managedObjectContext = AppDelegate.dataManager.managedObjectContext
-        self.arrayController.prepareContent()
-    }
     
     // MARK: - UI actions
     
     @IBAction func tableViewRowDoubleClicked(tableView: NSTableView) {
         guard tableView.clickedRow >= 0 else { return }
-        guard let arrangedObjects = self.arrayController.arrangedObjects as? [AnyObject] else { return }
+        guard let arrangedObjects = self.soundsArrayController.arrangedObjects as? [AnyObject] else { return }
         guard let soundObject = arrangedObjects[tableView.clickedRow] as? Sound else { return }
         
         // Play sound
@@ -73,15 +76,12 @@ class PopoverViewController: NSViewController {
                 let filePath = fileURL.absoluteString
                 Sound.createSoundInContext(filePath, inMoc: AppDelegate.dataManager.managedObjectContext)
             }
+            
+            // Save the context
             AppDelegate.dataManager.saveContext()
         }
     }
     
-    @IBAction func tamerelapute(sender: AnyObject) {
-        
-        print("tamerelagrossepute")
-        
-    }
     @IBAction func autoRepeatClicked(sender: AnyObject) {
         
         AppDelegate.dataManager.saveContext()

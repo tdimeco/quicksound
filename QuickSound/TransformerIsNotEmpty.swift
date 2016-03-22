@@ -14,6 +14,10 @@ class TransformerIsNotEmpty: NSValueTransformer {
     
     // MARK: - Value transformer
     
+    override class func allowsReverseTransformation() -> Bool {
+        return false
+    }
+    
     override class func transformedValueClass() -> AnyClass {
         return NSNumber.self
     }

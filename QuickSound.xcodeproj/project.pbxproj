@@ -111,7 +111,6 @@
 			children = (
 				E9FC49121C9DD93B001C35B3 /* MainMenu.xib */,
 				92BE1D791C9C4B9B004F13BB /* Assets.xcassets */,
-				2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -122,16 +121,25 @@
 				92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */,
 				E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */,
 				2228E2FC1CA19DF30041056A /* TransformerIsChecked.swift */,
-				2228E3071CA1B3380041056A /* DataManager.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		E942CF271CA1EEE8004FBCD2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2228E3041CA1B1CE0041056A /* Sound.swift */,
+				2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		E96D54071C9CAC08006286EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */,
-				2228E3041CA1B1CE0041056A /* Sound.swift */,
+				2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */,
+				2228E3071CA1B3380041056A /* DataManager.swift */,
+				E942CF271CA1EEE8004FBCD2 /* Entities */,
 			);
 			name = Model;
 			sourceTree = "<group>";

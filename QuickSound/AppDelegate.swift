@@ -12,6 +12,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    // MARK: - Core Data
+    
     static let storeUrl = AppDelegate.applicationDocumentsDirectory.URLByAppendingPathComponent("QuickSound.sqlite")
     static let modelUrl = NSBundle.mainBundle().URLForResource("Model", withExtension: "momd")!
     static let dataManager: DataManager = DataManager(storeURL: AppDelegate.storeUrl, andModelURL:  AppDelegate.modelUrl)
@@ -31,6 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     }()
     
+    
     // MARK: - Application delegate
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -38,6 +41,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        
+        // Save the Core Data context
+        AppDelegate.dataManager.saveContext()
     }
 }
