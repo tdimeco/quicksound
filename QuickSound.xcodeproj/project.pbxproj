@@ -7,18 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2228E2FD1CA19DF30041056A /* TransformerIsChecked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E2FC1CA19DF30041056A /* TransformerIsChecked.swift */; };
+		2228E3001CA1B0D00041056A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */; };
+		2228E3051CA1B1CE0041056A /* Sound+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */; };
+		2228E3061CA1B1CE0041056A /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3041CA1B1CE0041056A /* Sound.swift */; };
+		2228E3081CA1B3380041056A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3071CA1B3380041056A /* DataManager.swift */; };
 		92BE1D781C9C4B9B004F13BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */; };
 		92BE1D7A1C9C4B9B004F13BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BE1D791C9C4B9B004F13BB /* Assets.xcassets */; };
 		92BE1D861C9C4CA5004F13BB /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D851C9C4CA5004F13BB /* StatusItemController.swift */; };
 		92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D871C9C506B004F13BB /* PopoverViewController.swift */; };
 		92BE1D8A1C9C506B004F13BB /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BE1D881C9C506B004F13BB /* PopoverViewController.xib */; };
 		92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */; };
-		E96D54061C9CAC05006286EB /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D54051C9CAC05006286EB /* Sound.swift */; };
 		E96D54091C9CAE6E006286EB /* TransformerFilePathToName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */; };
 		E9FC49131C9DD93B001C35B3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FC49121C9DD93B001C35B3 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2228E2FC1CA19DF30041056A /* TransformerIsChecked.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerIsChecked.swift; sourceTree = "<group>"; };
+		2228E2FF1CA1B0D00041056A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sound+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2228E3041CA1B1CE0041056A /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		2228E3071CA1B3380041056A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		92BE1D741C9C4B9B004F13BB /* QuickSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92BE1D791C9C4B9B004F13BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,7 +36,6 @@
 		92BE1D871C9C506B004F13BB /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		92BE1D881C9C506B004F13BB /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerIsNotEmpty.swift; sourceTree = "<group>"; };
-		E96D54051C9CAC05006286EB /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerFilePathToName.swift; sourceTree = "<group>"; };
 		E9FC49121C9DD93B001C35B3 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +111,7 @@
 			children = (
 				E9FC49121C9DD93B001C35B3 /* MainMenu.xib */,
 				92BE1D791C9C4B9B004F13BB /* Assets.xcassets */,
+				2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -112,6 +121,8 @@
 			children = (
 				92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */,
 				E96D54081C9CAE6E006286EB /* TransformerFilePathToName.swift */,
+				2228E2FC1CA19DF30041056A /* TransformerIsChecked.swift */,
+				2228E3071CA1B3380041056A /* DataManager.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -119,7 +130,8 @@
 		E96D54071C9CAC08006286EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E96D54051C9CAC05006286EB /* Sound.swift */,
+				2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */,
+				2228E3041CA1B1CE0041056A /* Sound.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -196,11 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96D54061C9CAC05006286EB /* Sound.swift in Sources */,
 				92BE1D861C9C4CA5004F13BB /* StatusItemController.swift in Sources */,
+				2228E3081CA1B3380041056A /* DataManager.swift in Sources */,
 				92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */,
+				2228E3001CA1B0D00041056A /* Model.xcdatamodeld in Sources */,
+				2228E2FD1CA19DF30041056A /* TransformerIsChecked.swift in Sources */,
 				E96D54091C9CAE6E006286EB /* TransformerFilePathToName.swift in Sources */,
+				2228E3051CA1B1CE0041056A /* Sound+CoreDataProperties.swift in Sources */,
 				92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */,
+				2228E3061CA1B1CE0041056A /* Sound.swift in Sources */,
 				92BE1D781C9C4B9B004F13BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +308,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = QuickSound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -305,7 +320,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = QuickSound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -336,6 +350,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2228E2FF1CA1B0D00041056A /* Model.xcdatamodel */,
+			);
+			currentVersion = 2228E2FF1CA1B0D00041056A /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 92BE1D6C1C9C4B9B004F13BB /* Project object */;
 }

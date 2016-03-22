@@ -48,7 +48,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Blr-KK-Txb">
-                                                        <rect key="frame" x="29" y="7" width="200" height="19"/>
+                                                        <rect key="frame" x="29" y="7" width="171" height="19"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Sound name" id="zgU-2Z-lTN">
                                                             <font key="font" metaFont="systemLight" size="16"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -70,12 +70,29 @@
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3UO-en-eQC">
+                                                        <rect key="frame" x="203" y="1" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="0e1-bD-SiD"/>
+                                                            <constraint firstAttribute="height" constant="30" id="x9N-aN-eVG"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRefreshTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="m00-4s-AuG">
+                                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="autoRepeatClicked:" target="-2" id="RMF-EF-W7V"/>
+                                                            <binding destination="33t-ly-sub" name="value" keyPath="objectValue.repeatEnabled" id="VxC-2G-ACn"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="3UO-en-eQC" secondAttribute="trailing" constant="4" id="2sM-NF-AhB"/>
                                                     <constraint firstItem="z1e-do-FgY" firstAttribute="leading" secondItem="33t-ly-sub" secondAttribute="leading" constant="10" id="875-UA-1Vl"/>
                                                     <constraint firstItem="Blr-KK-Txb" firstAttribute="leading" secondItem="z1e-do-FgY" secondAttribute="trailing" constant="8" id="H1n-SL-88d"/>
+                                                    <constraint firstItem="3UO-en-eQC" firstAttribute="leading" secondItem="Blr-KK-Txb" secondAttribute="trailing" constant="5" id="TFq-4g-3f8"/>
                                                     <constraint firstItem="z1e-do-FgY" firstAttribute="centerY" secondItem="33t-ly-sub" secondAttribute="centerY" id="TWe-Gg-WaC"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Blr-KK-Txb" secondAttribute="trailing" constant="10" id="cAl-1W-xlI"/>
+                                                    <constraint firstItem="3UO-en-eQC" firstAttribute="centerY" secondItem="33t-ly-sub" secondAttribute="centerY" id="dqK-5x-n86"/>
                                                     <constraint firstItem="Blr-KK-Txb" firstAttribute="centerY" secondItem="33t-ly-sub" secondAttribute="centerY" id="rQN-if-6pU"/>
                                                 </constraints>
                                                 <connections>
@@ -210,19 +227,18 @@ CA
             </constraints>
             <point key="canvasLocation" x="438" y="441"/>
         </customView>
-        <arrayController avoidsEmptySelection="NO" id="XaV-0I-8yP">
+        <arrayController mode="entity" entityName="Sound" automaticallyPreparesContent="YES" avoidsEmptySelection="NO" id="XaV-0I-8yP">
             <declaredKeys>
                 <string>filePath</string>
+                <string>repeat</string>
             </declaredKeys>
-            <connections>
-                <binding destination="mbe-IX-0Aw" name="contentArray" keyPath="values.sounds" id="H8e-Pc-2sm"/>
-            </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="mbe-IX-0Aw"/>
     </objects>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSListViewTemplate" width="14" height="10"/>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
     </resources>
 </document>

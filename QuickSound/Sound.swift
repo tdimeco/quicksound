@@ -2,38 +2,26 @@
 //  Sound.swift
 //  QuickSound
 //
-//  Created by Thomas Di Meco on 18/03/2016.
+//  Created by playadz on 22/03/2016.
 //  Copyright © 2016 Thomas Di Meco. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
 
-private let filePathKey = "filePath"
+class Sound: NSManagedObject {
 
+// Insert code here to add functionality to your managed object subclass
 
-class Sound {
-    
-    var filePath: String
-    
-    
-    // MARK: - Lifecycle
-    
-    init(filePath: String) {
-        self.filePath = filePath
+    static func createSoundInContext(filepath: String, inMoc moc: NSManagedObjectContext) -> Sound? {
+        var object: Sound?
+        
+        if let entityDescription = NSEntityDescription.entityForName("Sound", inManagedObjectContext: moc) {
+            object = Sound(entity: entityDescription, insertIntoManagedObjectContext: moc)
+            object?.filePath = filepath
+        }
+        return object
     }
     
-    
-    // MARK: - Binding to dictionary
-    
-    convenience init?(dictionary: NSDictionary) {
-        guard let filePath = dictionary.valueForKey(filePathKey) as? String else { return nil }
-        self.init(filePath: filePath)
-    }
-    
-    func toDictionary() -> NSMutableDictionary {
-        let dic = NSMutableDictionary()
-        dic.setValue(self.filePath, forKey: filePathKey)
-        return dic
-    }
 }
