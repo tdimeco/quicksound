@@ -18,6 +18,7 @@
 		92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D871C9C506B004F13BB /* PopoverViewController.swift */; };
 		92BE1D8A1C9C506B004F13BB /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BE1D881C9C506B004F13BB /* PopoverViewController.xib */; };
 		92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */; };
+		E91F8D1B1CA204C700BC1B08 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F8D1A1CA204C700BC1B08 /* Constants.swift */; };
 		E942CF291CA1FBF8004FBCD2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942CF281CA1FBF8004FBCD2 /* Utils.swift */; };
 		E9FC49131C9DD93B001C35B3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FC49121C9DD93B001C35B3 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		92BE1D871C9C506B004F13BB /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		92BE1D881C9C506B004F13BB /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerIsNotEmpty.swift; sourceTree = "<group>"; };
+		E91F8D1A1CA204C700BC1B08 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E942CF281CA1FBF8004FBCD2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E9FC49121C9DD93B001C35B3 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */,
+				E91F8D1A1CA204C700BC1B08 /* Constants.swift */,
 				92BE1D8C1C9C5079004F13BB /* Status Item */,
 				92BE1D8B1C9C506E004F13BB /* Popover */,
 				E96D54071C9CAC08006286EB /* Model */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92BE1D861C9C4CA5004F13BB /* StatusItemController.swift in Sources */,
+				E91F8D1B1CA204C700BC1B08 /* Constants.swift in Sources */,
 				2228E3081CA1B3380041056A /* DataManager.swift in Sources */,
 				92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */,
 				2228E3001CA1B0D00041056A /* Model.xcdatamodeld in Sources */,

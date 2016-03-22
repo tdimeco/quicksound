@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" columnResizing="NO" autosaveColumns="NO" rowHeight="33" rowSizeStyle="automatic" viewBased="YES" id="Mmb-31-dOi">
-                                <rect key="frame" x="0.0" y="0.0" width="275" height="246"/>
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
