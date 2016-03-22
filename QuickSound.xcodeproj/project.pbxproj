@@ -12,6 +12,7 @@
 		2228E3051CA1B1CE0041056A /* Sound+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */; };
 		2228E3061CA1B1CE0041056A /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3041CA1B1CE0041056A /* Sound.swift */; };
 		2228E3081CA1B3380041056A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3071CA1B3380041056A /* DataManager.swift */; };
+		3717907A1CA1FADC00A622A5 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371790791CA1FADC00A622A5 /* SoundManager.swift */; };
 		92BE1D781C9C4B9B004F13BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */; };
 		92BE1D7A1C9C4B9B004F13BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BE1D791C9C4B9B004F13BB /* Assets.xcassets */; };
 		92BE1D861C9C4CA5004F13BB /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D851C9C4CA5004F13BB /* StatusItemController.swift */; };
@@ -28,6 +29,7 @@
 		2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sound+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2228E3041CA1B1CE0041056A /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		2228E3071CA1B3380041056A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		371790791CA1FADC00A622A5 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		92BE1D741C9C4B9B004F13BB /* QuickSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92BE1D791C9C4B9B004F13BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371790781CA1FABF00A622A5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				371790791CA1FADC00A622A5 /* SoundManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
 		92BE1D6B1C9C4B9B004F13BB = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */,
+				371790781CA1FABF00A622A5 /* Manager */,
 				92BE1D8C1C9C5079004F13BB /* Status Item */,
 				92BE1D8B1C9C506E004F13BB /* Popover */,
 				E96D54071C9CAC08006286EB /* Model */,
@@ -225,6 +236,7 @@
 				E942CF291CA1FBF8004FBCD2 /* Utils.swift in Sources */,
 				92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */,
 				2228E3061CA1B1CE0041056A /* Sound.swift in Sources */,
+				3717907A1CA1FADC00A622A5 /* SoundManager.swift in Sources */,
 				92BE1D781C9C4B9B004F13BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

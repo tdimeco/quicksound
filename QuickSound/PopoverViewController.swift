@@ -14,8 +14,7 @@ class PopoverViewController: NSViewController {
     @IBOutlet var soundsArrayController: NSArrayController!
     @IBOutlet weak var tableView: NSTableView!
     
-    private var soundPlayer:[NSSound] = []
-    
+    private let soundManager:SoundManager = SoundManager()
     
     // MARK: - Lifecycle
     
@@ -32,7 +31,7 @@ class PopoverViewController: NSViewController {
         super.viewWillDisappear()
         
         // Deselect table view
-        self.tableView.deselectAll(nil)
+        self.tableView.deselectAll(nil)        
     }
     
     
@@ -44,18 +43,13 @@ class PopoverViewController: NSViewController {
         guard let soundObject = arrangedObjects[tableView.clickedRow] as? Sound else { return }
         
         // Play sound
-        if let soundURL = NSURL(string: soundObject.filePath!) {
-            let sound = NSSound(contentsOfURL: soundURL, byReference: true)
-            let successOrNil = sound?.play()
-            
-            // Show alert
-            if successOrNil == nil || !successOrNil! {
-                let alert = NSAlert()
-                alert.messageText = "Impossible de lire le son"
-                alert.informativeText = "Le fichier est invalide ou introuvable."
-                alert.alertStyle = .CriticalAlertStyle
-                alert.runModal()
-            }
+        let repeatEnabled = soundObject.repeatEnabled!.boolValue
+        let filePath = soundObject.filePath!
+        
+        if repeatEnabled && self.soundManager.soundIsPlaying(filePath) {
+            self.soundManager.stopSound(atPath: filePath)
+        } else {
+            self.soundManager.playSound(atPath: filePath, repeatSound: repeatEnabled)
         }
     }
     
