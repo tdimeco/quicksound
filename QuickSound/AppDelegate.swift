@@ -37,12 +37,52 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Application delegate
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        
+        // Check for updates
+        self.checkForUpdates()
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {
         
         // Save the Core Data context
         AppDelegate.dataManager.saveContext()
+    }
+    
+    
+    // MARK: - Updates
+    
+    func checkForUpdates() {
+        
+        // Check for updates in background
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            
+            // Get local/remote infos
+            let localPlist = NSBundle.mainBundle().infoDictionary
+            let remotePlist = NSDictionary(contentsOfURL: NSURL(string: Constants.UpdatePlistURL)!)
+            
+            // Check new version
+            if let localVersion = localPlist?["CFBundleVersion"] as? String, remoteVersion = remotePlist?["CFBundleVersion"] as? String {
+                if remoteVersion > localVersion {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.showUpdatesAlert()
+                    }
+                }
+            }
+        }
+    }
+    
+    private func showUpdatesAlert() {
+        
+        let alert = NSAlert()
+        alert.messageText = "Une nouvelle version est disponible !"
+        alert.informativeText = "Vous pouvez la télécharger la nouvelle version de QuickSound depuis GitHub."
+        alert.alertStyle = .InformationalAlertStyle
+        alert.addButtonWithTitle("Télécharger")
+        alert.addButtonWithTitle("Pas maintenant")
+        
+        let result = alert.runModal()
+        if result == NSAlertFirstButtonReturn {
+            NSWorkspace.sharedWorkspace().openURL(NSURL(string: Constants.UpdatesPageURL)!)
+        }
     }
 }
