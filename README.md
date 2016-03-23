@@ -4,6 +4,9 @@
 **Quickly play sounds from the OS X status bar.**
 
 
+![screenshot](https://raw.githubusercontent.com/tdimeco/QuickSound/develop/Documentation/Screenshot.png)
+
+
 ## Features
 
 Current features are:
