@@ -48,7 +48,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Blr-KK-Txb">
-                                                        <rect key="frame" x="29" y="7" width="218" height="19"/>
+                                                        <rect key="frame" x="29" y="7" width="211" height="19"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Sound name" id="zgU-2Z-lTN">
                                                             <font key="font" metaFont="systemLight" size="16"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -71,8 +71,8 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3UO-en-eQC">
-                                                        <rect key="frame" x="253" y="9" width="11" height="16"/>
-                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRefreshTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="m00-4s-AuG">
+                                                        <rect key="frame" x="246" y="8" width="18" height="18"/>
+                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="RepeatIcon" imagePosition="overlaps" alignment="center" alternateImage="RepeatFilledIcon" state="on" imageScaling="proportionallyDown" inset="2" id="m00-4s-AuG">
                                                             <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
@@ -234,7 +234,8 @@ CA
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSListViewTemplate" width="14" height="10"/>
-        <image name="NSRefreshTemplate" width="11" height="15"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="RepeatFilledIcon" width="18" height="18"/>
+        <image name="RepeatIcon" width="18" height="18"/>
     </resources>
 </document>
