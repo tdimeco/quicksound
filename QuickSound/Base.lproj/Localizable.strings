@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  QuickSound
+
+  Created by Thomas Di Meco on 28/10/2016.
+  Copyright © 2016 Thomas Di Meco. All rights reserved.
+*/
+
+"Alert.Update.Title" = "A new version is available!";
+"Alert.Update.Description" = "You can download the new version of QuickSound from GitHub.";
+"Alert.Update.Download" = "Download";
+"Alert.Update.Cancel" = "Later";
+
+"Alert.SoundError.Title" = "Unable to play the sound";
+"Alert.SoundError.Description" = "The sound file is invalid or not found.";

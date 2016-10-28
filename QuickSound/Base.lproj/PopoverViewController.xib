@@ -38,7 +38,7 @@
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
-                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="EIB-dX-YS8">
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" id="EIB-dX-YS8">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -120,8 +120,8 @@
                     </scroller>
                 </scrollView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MG5-Tr-YmP">
-                    <rect key="frame" x="88" y="136" width="99" height="24"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Aucun son" id="Eop-gp-PbZ">
+                    <rect key="frame" x="87" y="136" width="101" height="24"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="No sounds" id="Eop-gp-PbZ">
                         <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -167,14 +167,14 @@
                                 <menuItem image="NSListViewTemplate" hidden="YES" id="g13-2q-mXQ">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                 </menuItem>
-                                <menuItem title="À propos de QuickSound..." id="luy-iv-k7R">
+                                <menuItem title="About QuickSound..." id="luy-iv-k7R">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                     <connections>
                                         <action selector="showAboutWindow:" target="-2" id="hza-oo-5BY"/>
                                     </connections>
                                 </menuItem>
                                 <menuItem isSeparatorItem="YES" id="WOd-F6-Gbx"/>
-                                <menuItem title="Quitter QuickSound" keyEquivalent="q" id="TGm-PP-Ulz">
+                                <menuItem title="Quit QuickSound" keyEquivalent="q" id="TGm-PP-Ulz">
                                     <connections>
                                         <action selector="quitApplication:" target="-2" id="1By-3y-w9t"/>
                                     </connections>

@@ -16,10 +16,11 @@
 		92BE1D7A1C9C4B9B004F13BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BE1D791C9C4B9B004F13BB /* Assets.xcassets */; };
 		92BE1D861C9C4CA5004F13BB /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D851C9C4CA5004F13BB /* StatusItemController.swift */; };
 		92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D871C9C506B004F13BB /* PopoverViewController.swift */; };
-		92BE1D8A1C9C506B004F13BB /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BE1D881C9C506B004F13BB /* PopoverViewController.xib */; };
 		92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */; };
 		E91F8D1B1CA204C700BC1B08 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F8D1A1CA204C700BC1B08 /* Constants.swift */; };
 		E942CF291CA1FBF8004FBCD2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942CF281CA1FBF8004FBCD2 /* Utils.swift */; };
+		E9451AD61DC3E171004845FA /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9451AD81DC3E171004845FA /* PopoverViewController.xib */; };
+		E9732E171DC3E5C000CD02EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9732E191DC3E5C000CD02EE /* Localizable.strings */; };
 		E9FC49131C9DD93B001C35B3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FC49121C9DD93B001C35B3 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -35,10 +36,13 @@
 		92BE1D7E1C9C4B9B004F13BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92BE1D851C9C4CA5004F13BB /* StatusItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
 		92BE1D871C9C506B004F13BB /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
-		92BE1D881C9C506B004F13BB /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerIsNotEmpty.swift; sourceTree = "<group>"; };
 		E91F8D1A1CA204C700BC1B08 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E942CF281CA1FBF8004FBCD2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		E9451AD71DC3E171004845FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PopoverViewController.xib; sourceTree = "<group>"; };
+		E9732E141DC3E31B00CD02EE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/PopoverViewController.strings; sourceTree = "<group>"; };
+		E9732E181DC3E5C000CD02EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E9732E1A1DC3E5C200CD02EE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9FC49121C9DD93B001C35B3 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				92BE1D871C9C506B004F13BB /* PopoverViewController.swift */,
-				92BE1D881C9C506B004F13BB /* PopoverViewController.xib */,
+				E9451AD81DC3E171004845FA /* PopoverViewController.xib */,
 			);
 			name = Popover;
 			sourceTree = "<group>";
@@ -123,6 +127,7 @@
 			children = (
 				E9FC49121C9DD93B001C35B3 /* MainMenu.xib */,
 				92BE1D791C9C4B9B004F13BB /* Assets.xcassets */,
+				E9732E191DC3E5C000CD02EE /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 92BE1D6B1C9C4B9B004F13BB;
 			productRefGroup = 92BE1D751C9C4B9B004F13BB /* Products */;
@@ -208,7 +214,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92BE1D7A1C9C4B9B004F13BB /* Assets.xcassets in Resources */,
-				92BE1D8A1C9C506B004F13BB /* PopoverViewController.xib in Resources */,
+				E9732E171DC3E5C000CD02EE /* Localizable.strings in Resources */,
+				E9451AD61DC3E171004845FA /* PopoverViewController.xib in Resources */,
 				E9FC49131C9DD93B001C35B3 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,11 +243,33 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		E9451AD81DC3E171004845FA /* PopoverViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9451AD71DC3E171004845FA /* Base */,
+				E9732E141DC3E31B00CD02EE /* fr */,
+			);
+			name = PopoverViewController.xib;
+			sourceTree = "<group>";
+		};
+		E9732E191DC3E5C000CD02EE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9732E181DC3E5C000CD02EE /* Base */,
+				E9732E1A1DC3E5C200CD02EE /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		92BE1D7F1C9C4B9B004F13BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -287,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

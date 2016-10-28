@@ -1,0 +1,21 @@
+
+/* Class = "NSTextFieldCell"; title = "♬"; ObjectID = "3dT-AU-yAM"; */
+"3dT-AU-yAM.title" = "♬";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "More..."; ObjectID = "7oC-em-Yi8"; */
+"7oC-em-Yi8.ibShadowedToolTip" = "Plus...";
+
+/* Class = "NSTextFieldCell"; title = "Aucun son"; ObjectID = "Eop-gp-PbZ"; */
+"Eop-gp-PbZ.title" = "Aucun son";
+
+/* Class = "CocoaBindingsConnection"; ibShadowedIsNilPlaceholder = "<No name>"; ObjectID = "Ona-Qe-XOe"; */
+"Ona-Qe-XOe.ibShadowedIsNilPlaceholder" = "<Sans nom>";
+
+/* Class = "NSMenuItem"; title = "Quitter QuickSound"; ObjectID = "TGm-PP-Ulz"; */
+"TGm-PP-Ulz.title" = "Quitter QuickSound";
+
+/* Class = "NSMenuItem"; title = "À propos de QuickSound..."; ObjectID = "luy-iv-k7R"; */
+"luy-iv-k7R.title" = "À propos de QuickSound...";
+
+/* Class = "NSTextFieldCell"; title = "Sound name"; ObjectID = "zgU-2Z-lTN"; */
+"zgU-2Z-lTN.title" = "Nom du son";

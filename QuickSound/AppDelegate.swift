@@ -74,11 +74,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func showUpdatesAlert() {
         
         let alert = NSAlert()
-        alert.messageText = "Une nouvelle version est disponible !"
-        alert.informativeText = "Vous pouvez la télécharger la nouvelle version de QuickSound depuis GitHub."
+        alert.messageText = NSLocalizedString("Alert.Update.Title", comment: "")
+        alert.informativeText = NSLocalizedString("Alert.Update.Description", comment: "")
         alert.alertStyle = .informational
-        alert.addButton(withTitle: "Télécharger")
-        alert.addButton(withTitle: "Pas maintenant")
+        alert.addButton(withTitle: NSLocalizedString("Alert.Update.Download", comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Alert.Update.Cancel", comment: ""))
         
         let result = alert.runModal()
         if result == NSAlertFirstButtonReturn {

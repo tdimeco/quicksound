@@ -34,8 +34,8 @@ class SoundManager: NSObject, NSSoundDelegate {
             // Show alert
             if successOrNil == nil || !successOrNil! {
                 let alert = NSAlert()
-                alert.messageText = "Impossible de lire le son"
-                alert.informativeText = "Le fichier est invalide ou introuvable."
+                alert.messageText = NSLocalizedString("Alert.SoundError.Title", comment: "")
+                alert.informativeText = NSLocalizedString("Alert.SoundError.Description", comment: "")
                 alert.alertStyle = .critical
                 alert.runModal()
             } else if repeatSound {
