@@ -10,6 +10,6 @@ import Foundation
 
 
 struct Constants {
-    static let UpdatePlistURL = "https://raw.githubusercontent.com/tdimeco/QuickSound/master/QuickSound/Info.plist"
-    static let UpdatesPageURL = "https://github.com/tdimeco/QuickSound/releases"
+    static let UpdatePlistURL = URL(string: "https://raw.githubusercontent.com/tdimeco/QuickSound/master/QuickSound/Info.plist")!
+    static let UpdatesPageURL = URL(string: "https://github.com/tdimeco/QuickSound/releases")!
 }

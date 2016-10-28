@@ -20,7 +20,7 @@ class StatusItemController: NSObject {
     override init() {
         
         // Create status item and popover
-        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
+        self.statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
         self.popover = NSPopover()
         super.init()
         
@@ -29,10 +29,10 @@ class StatusItemController: NSObject {
         statusButton.title = "♬"
         statusButton.target = self
         statusButton.action = #selector(StatusItemController.statusItemClicked(_:))
-        statusButton.sendActionOn(Int(NSEventMask.LeftMouseUpMask.rawValue | NSEventMask.RightMouseUpMask.rawValue))
+        statusButton.sendAction(on: NSEventMask(rawValue: UInt64(NSEventMask.leftMouseUp.rawValue | NSEventMask.rightMouseUp.rawValue)))
         
         // Setup popover
-        self.popover.behavior = .Transient
+        self.popover.behavior = .transient
         self.popover.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
         self.popover.contentViewController = PopoverViewController(nibName: "PopoverViewController", bundle: nil)
     }
@@ -40,8 +40,8 @@ class StatusItemController: NSObject {
     
     // MARK: - Status item
     
-    func statusItemClicked(sender: AnyObject) {
-        if self.popover.shown {
+    func statusItemClicked(_ sender: AnyObject) {
+        if self.popover.isShown {
             self.closePopover()
         } else {
             self.openPopover()
@@ -54,10 +54,10 @@ class StatusItemController: NSObject {
     func openPopover() {
         
         // Show the popover
-        self.popover.showRelativeToRect(self.statusItem.button!.bounds, ofView: self.statusItem.button!, preferredEdge: .MinY)
+        self.popover.show(relativeTo: self.statusItem.button!.bounds, of: self.statusItem.button!, preferredEdge: .minY)
         
         // Give the focus to the app
-        NSApp.activateIgnoringOtherApps(true)
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     func closePopover() {

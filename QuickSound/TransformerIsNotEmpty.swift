@@ -10,7 +10,7 @@ import Foundation
 
 
 @objc(TransformerIsNotEmpty)
-class TransformerIsNotEmpty: NSValueTransformer {
+class TransformerIsNotEmpty: ValueTransformer {
     
     // MARK: - Value transformer
     
@@ -22,8 +22,8 @@ class TransformerIsNotEmpty: NSValueTransformer {
         return NSNumber.self
     }
     
-    override func transformedValue(value: AnyObject?) -> AnyObject? {
-        guard let array = value as? [AnyObject] else { return nil }
-        return NSNumber(bool: array.count > 0)
+    override func transformedValue(_ value: Any?) -> Any? {
+        guard let array = value as? [Any] else { return nil }
+        return NSNumber(value: array.count > 0)
     }
 }

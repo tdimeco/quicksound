@@ -14,11 +14,11 @@ class Sound: NSManagedObject {
     
     // MARK: - Creation
     
-    static func createSoundInContext(filepath: String, inMoc moc: NSManagedObjectContext) -> Sound? {
+    static func createSound(withPath filepath: String, inContext context: NSManagedObjectContext) -> Sound? {
         var object: Sound?
         
-        if let entityDescription = NSEntityDescription.entityForName("Sound", inManagedObjectContext: moc) {
-            object = Sound(entity: entityDescription, insertIntoManagedObjectContext: moc)
+        if let entityDescription = NSEntityDescription.entity(forEntityName: "Sound", in: context) {
+            object = Sound(entity: entityDescription, insertInto: context)
             object?.filePath = filepath
             object?.name = Utils.filePathToFileNameWithoutExtension(filepath)
         }

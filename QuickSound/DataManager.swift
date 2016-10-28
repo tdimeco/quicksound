@@ -16,25 +16,26 @@ class DataManager {
     let managedObjectModel: NSManagedObjectModel
     let storeCoordinator: NSPersistentStoreCoordinator
     
+    
     /**
      DataManager initializer
      
-     - parameter storeURL: the URL of the store
+     - parameter storeUrl: the URL of the store
      - parameter modelUrl: the URL of the model
      
      - returns: A dataManager initialized
      */
-    init(storeURL: NSURL, andModelURL modelUrl: NSURL) {
+    init(storeUrl: URL, andModelUrl modelUrl: URL) {
         
         // Init managed object model
-        self.managedObjectModel = NSManagedObjectModel(contentsOfURL: modelUrl)!
+        self.managedObjectModel = NSManagedObjectModel(contentsOf: modelUrl)!
         
         // Init store coordinator with managed object model
         self.storeCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
 
         do {
             let options = [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]
-            try self.storeCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
+            try self.storeCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: options)
         } catch let error as NSError {
             
             // Abort with error
@@ -43,7 +44,7 @@ class DataManager {
         }
         
         // Init managed object context
-        self.managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        self.managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         self.managedObjectContext.persistentStoreCoordinator = self.storeCoordinator
         
     }

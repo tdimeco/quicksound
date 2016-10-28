@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2228E2FD1CA19DF30041056A /* TransformerIsChecked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E2FC1CA19DF30041056A /* TransformerIsChecked.swift */; };
 		2228E3001CA1B0D00041056A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */; };
-		2228E3051CA1B1CE0041056A /* Sound+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */; };
 		2228E3061CA1B1CE0041056A /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3041CA1B1CE0041056A /* Sound.swift */; };
 		2228E3081CA1B3380041056A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3071CA1B3380041056A /* DataManager.swift */; };
 		3717907A1CA1FADC00A622A5 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371790791CA1FADC00A622A5 /* SoundManager.swift */; };
@@ -27,7 +26,6 @@
 /* Begin PBXFileReference section */
 		2228E2FC1CA19DF30041056A /* TransformerIsChecked.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerIsChecked.swift; sourceTree = "<group>"; };
 		2228E2FF1CA1B0D00041056A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sound+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2228E3041CA1B1CE0041056A /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		2228E3071CA1B3380041056A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		371790791CA1FADC00A622A5 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -139,21 +137,12 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		E942CF271CA1EEE8004FBCD2 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				2228E3041CA1B1CE0041056A /* Sound.swift */,
-				2228E3031CA1B1CE0041056A /* Sound+CoreDataProperties.swift */,
-			);
-			name = Entities;
-			sourceTree = "<group>";
-		};
 		E96D54071C9CAC08006286EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */,
 				2228E3071CA1B3380041056A /* DataManager.swift */,
-				E942CF271CA1EEE8004FBCD2 /* Entities */,
+				2228E3041CA1B1CE0041056A /* Sound.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -185,12 +174,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Thomas Di Meco";
 				TargetAttributes = {
 					92BE1D731C9C4B9B004F13BB = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = LU8GV6C284;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -236,7 +226,6 @@
 				92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */,
 				2228E3001CA1B0D00041056A /* Model.xcdatamodeld in Sources */,
 				2228E2FD1CA19DF30041056A /* TransformerIsChecked.swift in Sources */,
-				2228E3051CA1B1CE0041056A /* Sound+CoreDataProperties.swift in Sources */,
 				E942CF291CA1FBF8004FBCD2 /* Utils.swift in Sources */,
 				92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */,
 				2228E3061CA1B1CE0041056A /* Sound.swift in Sources */,
@@ -261,8 +250,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -305,8 +296,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -325,6 +318,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -337,6 +331,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.tdimeco.QuickSound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -349,6 +344,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.tdimeco.QuickSound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

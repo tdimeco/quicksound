@@ -11,8 +11,8 @@ import Foundation
 
 struct Utils {
     
-    static func filePathToFileNameWithoutExtension(filePath: String) -> String? {
-        guard let lastPathComponent = NSURL(string: filePath)?.lastPathComponent else { return nil }
-        return NSString(string: lastPathComponent).stringByDeletingPathExtension
+    static func filePathToFileNameWithoutExtension(_ filePath: String) -> String? {
+        guard let lastPathComponent = URL(string: filePath)?.lastPathComponent else { return nil }
+        return NSString(string: lastPathComponent).deletingPathExtension
     }
 }

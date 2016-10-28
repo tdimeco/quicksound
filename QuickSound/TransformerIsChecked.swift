@@ -10,7 +10,7 @@ import Cocoa
 
 
 @objc(TransformerIsChecked)
-class TransformerIsChecked: NSValueTransformer {
+class TransformerIsChecked: ValueTransformer {
     
     // MARK: - Value transformer
     
@@ -22,12 +22,12 @@ class TransformerIsChecked: NSValueTransformer {
         return NSNumber.self
     }
     
-    override func transformedValue(value: AnyObject?) -> AnyObject? {
+    override func transformedValue(_ value: Any?) -> Any? {
         guard let state = value as? Int else { return nil }
-        return NSNumber(bool: state == NSOnState)
+        return NSNumber(value: state == NSOnState)
     }
     
-    override func reverseTransformedValue(value: AnyObject?) -> AnyObject? {
+    override func reverseTransformedValue(_ value: Any?) -> Any? {
         guard let isOn = value as? NSNumber else { return nil }
         return isOn.boolValue ? NSOnState : NSOffState
     }

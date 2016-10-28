@@ -12,37 +12,37 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    // MARK: - Core Data
-    
-    static let storeUrl = AppDelegate.applicationDocumentsDirectory.URLByAppendingPathComponent("QuickSound.sqlite")
-    static let modelUrl = NSBundle.mainBundle().URLForResource("Model", withExtension: "momd")!
-    static let dataManager: DataManager = DataManager(storeURL: AppDelegate.storeUrl, andModelURL:  AppDelegate.modelUrl)
     private let statusItemController = StatusItemController()
     
-    static var applicationDocumentsDirectory: NSURL = {
+    
+    // MARK: - Core Data
+    
+    static let storeUrl = AppDelegate.applicationDocumentsDirectory.appendingPathComponent("QuickSound.sqlite")
+    static let modelUrl = Bundle.main.url(forResource: "Model", withExtension: "momd")!
+    static let dataManager = DataManager(storeUrl: AppDelegate.storeUrl, andModelUrl:  AppDelegate.modelUrl)
+    
+    static var applicationDocumentsDirectory: URL = {
         
-        let fm = NSFileManager.defaultManager()
+        let paths = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)
+        let applicationSupportDirectoryURL = URL(fileURLWithPath:paths.first!, isDirectory: true)
+        let appDirectory = applicationSupportDirectoryURL.appendingPathComponent("QuickSound", isDirectory: true)
         
-        let paths = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .UserDomainMask, true)
-        let applicationSupportDirectoryURL = NSURL(fileURLWithPath:paths.first!, isDirectory:true)
-        let appDirectory = applicationSupportDirectoryURL.URLByAppendingPathComponent("QuickSound", isDirectory:true)
-        
-        _ = try? fm.createDirectoryAtURL(appDirectory, withIntermediateDirectories: true, attributes: nil)
+        _ = try? FileManager.default.createDirectory(at: appDirectory, withIntermediateDirectories: true, attributes: nil)
         
         return appDirectory
-
+        
     }()
     
     
     // MARK: - Application delegate
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ notification: Notification) {
         
         // Check for updates
         self.checkForUpdates()
     }
     
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ notification: Notification) {
         
         // Save the Core Data context
         AppDelegate.dataManager.saveContext()
@@ -54,16 +54,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func checkForUpdates() {
         
         // Check for updates in background
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+        DispatchQueue.global(qos: .utility).async {
             
             // Get local/remote infos
-            let localPlist = NSBundle.mainBundle().infoDictionary
-            let remotePlist = NSDictionary(contentsOfURL: NSURL(string: Constants.UpdatePlistURL)!)
+            let localPlist = Bundle.main.infoDictionary
+            let remotePlist = NSDictionary(contentsOf: Constants.UpdatePlistURL)
             
             // Check new version
-            if let localVersion = localPlist?["CFBundleVersion"] as? String, remoteVersion = remotePlist?["CFBundleVersion"] as? String {
+            if let localVersion = localPlist?["CFBundleVersion"] as? String, let remoteVersion = remotePlist?["CFBundleVersion"] as? String {
                 if remoteVersion > localVersion {
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         self.showUpdatesAlert()
                     }
                 }
@@ -76,13 +76,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let alert = NSAlert()
         alert.messageText = "Une nouvelle version est disponible !"
         alert.informativeText = "Vous pouvez la télécharger la nouvelle version de QuickSound depuis GitHub."
-        alert.alertStyle = .InformationalAlertStyle
-        alert.addButtonWithTitle("Télécharger")
-        alert.addButtonWithTitle("Pas maintenant")
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: "Télécharger")
+        alert.addButton(withTitle: "Pas maintenant")
         
         let result = alert.runModal()
         if result == NSAlertFirstButtonReturn {
-            NSWorkspace.sharedWorkspace().openURL(NSURL(string: Constants.UpdatesPageURL)!)
+            NSWorkspace.shared().open(Constants.UpdatesPageURL)
         }
     }
 }

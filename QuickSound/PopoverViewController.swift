@@ -14,7 +14,8 @@ class PopoverViewController: NSViewController {
     @IBOutlet var soundsArrayController: NSArrayController!
     @IBOutlet weak var tableView: NSTableView!
     
-    private let soundManager:SoundManager = SoundManager()
+    private let soundManager = SoundManager()
+    
     
     // MARK: - Lifecycle
     
@@ -37,23 +38,23 @@ class PopoverViewController: NSViewController {
     
     // MARK: - UI actions
     
-    @IBAction func tableViewRowDoubleClicked(tableView: NSTableView) {
+    @IBAction func tableViewRowDoubleClicked(_ tableView: NSTableView) {
         guard tableView.clickedRow >= 0 else { return }
-        guard let arrangedObjects = self.soundsArrayController.arrangedObjects as? [AnyObject] else { return }
+        guard let arrangedObjects = self.soundsArrayController.arrangedObjects as? [Any] else { return }
         guard let soundObject = arrangedObjects[tableView.clickedRow] as? Sound else { return }
         
         // Play sound
         let repeatEnabled = soundObject.repeatEnabled!.boolValue
         let filePath = soundObject.filePath!
         
-        if repeatEnabled && self.soundManager.soundIsPlaying(filePath) {
-            self.soundManager.stopSound(atPath: filePath)
+        if repeatEnabled && self.soundManager.isSoundPlaying(atPath: filePath) {
+            _ = self.soundManager.stopSound(atPath: filePath)
         } else {
             self.soundManager.playSound(atPath: filePath, repeatSound: repeatEnabled)
         }
     }
     
-    @IBAction func addSoundAction(sender: AnyObject) {
+    @IBAction func addSoundAction(_ sender: AnyObject) {
         
         // Configure open panel
         let openPanel = NSOpenPanel()
@@ -67,9 +68,9 @@ class PopoverViewController: NSViewController {
         if result == NSFileHandlingPanelOKButton {
             
             // Save each selected sound
-            for fileURL in openPanel.URLs {
+            for fileURL in openPanel.urls {
                 let filePath = fileURL.absoluteString
-                Sound.createSoundInContext(filePath, inMoc: AppDelegate.dataManager.managedObjectContext)
+                _ = Sound.createSound(withPath: filePath, inContext: AppDelegate.dataManager.managedObjectContext)
             }
             
             // Save the context
@@ -77,20 +78,20 @@ class PopoverViewController: NSViewController {
         }
     }
     
-    @IBAction func removeSoundAction(sender: AnyObject) {
+    @IBAction func removeSoundAction(_ sender: AnyObject) {
         self.soundsArrayController.remove(sender)
         AppDelegate.dataManager.saveContext()
     }
     
-    @IBAction func autoRepeatClicked(sender: AnyObject) {
+    @IBAction func autoRepeatClicked(_ sender: AnyObject) {
         AppDelegate.dataManager.saveContext()
     }
     
-    @IBAction func showAboutWindow(sender: AnyObject) {
-        NSApplication.sharedApplication().orderFrontStandardAboutPanel(sender)
+    @IBAction func showAboutWindow(_ sender: AnyObject) {
+        NSApplication.shared().orderFrontStandardAboutPanel(sender)
     }
     
-    @IBAction func quitApplication(sender: AnyObject) {
-        NSApplication.sharedApplication().terminate(sender)
+    @IBAction func quitApplication(_ sender: AnyObject) {
+        NSApplication.shared().terminate(sender)
     }
 }
