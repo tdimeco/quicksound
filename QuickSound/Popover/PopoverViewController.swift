@@ -12,7 +12,7 @@ class PopoverViewController: NSViewController {
     
     // MARK: Properties
     
-    private let soundManager = SoundManager()
+    private let soundManager = SoundManager(managedObjectContext: AppDelegate.dataManager.managedObjectContext)
     
     // MARK: Outlets
     
@@ -45,14 +45,12 @@ class PopoverViewController: NSViewController {
         guard let arrangedObjects = self.soundsArrayController.arrangedObjects as? [Any] else { return }
         guard let soundObject = arrangedObjects[tableView.clickedRow] as? Sound else { return }
         
-        // Play sound
-        let repeatEnabled = soundObject.repeatEnabled!.boolValue
-        let filePath = soundObject.filePath!
-        
-        if repeatEnabled && self.soundManager.isSoundPlaying(atPath: filePath) {
-            self.soundManager.stopSound(atPath: filePath)
+        // Play or stop the sound
+        let repeatEnabled = soundObject.repeatEnabled?.boolValue ?? false
+        if repeatEnabled && self.soundManager.isSoundPlaying(soundObject) {
+            self.soundManager.stopSound(soundObject)
         } else {
-            self.soundManager.playSound(atPath: filePath, repeatSound: repeatEnabled)
+            self.soundManager.playSound(soundObject)
         }
     }
     

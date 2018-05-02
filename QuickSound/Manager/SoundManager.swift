@@ -9,26 +9,35 @@
 import Foundation
 import Cocoa
 
-class SoundManager: NSObject, NSSoundDelegate {
+class SoundManager {
     
     // MARK: Properties
     
-    private var sounds: [NSSound] = []
+    private var repeatingSounds: [(object: Sound, sound: NSSound)] = []
+    
+    // MARK: Lifecycle
+    
+    init(managedObjectContext: NSManagedObjectContext) {
+        NotificationCenter.default.addObserver(self, selector: #selector(managedObjectDidChanged(_:)), name: .NSManagedObjectContextObjectsDidChange, object: managedObjectContext)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     // MARK: Public API
     
     /// Use this method to play a sound.
     ///
     /// - Parameters:
-    ///   - path: the path of the sound.
-    ///   - repeatSound: a boolean to indicate if you want to repeat the sound.
-    func playSound(atPath path: String, repeatSound: Bool) {
+    ///   - sound: the sound object.
+    func playSound(_ object: Sound) {
         
-        guard let soundURL = URL(string: path) else { return }
+        guard let filePath = object.filePath, let url = URL(string: filePath) else { return }
         
-        let sound = NSSound(contentsOf: soundURL, byReference: true)
+        let repeatSound = object.repeatEnabled?.boolValue ?? false
+        let sound = NSSound(contentsOf: url, byReference: true)
         sound?.loops = repeatSound
-        sound?.setName(NSSound.Name(path))
         
         let successOrNil = sound?.play()
         
@@ -40,46 +49,54 @@ class SoundManager: NSObject, NSSoundDelegate {
             alert.alertStyle = .critical
             alert.runModal()
         } else if repeatSound {
-            self.sounds.append(sound!)
+            self.repeatingSounds.append((object, sound!))
         }
     }
     
     /// Use this method to stop a sound.
     ///
-    /// - Parameter path: the path of the sound.
+    /// - Parameter object: the sound object.
     /// - Returns: a boolean to indicate if sound is stopped.
     @discardableResult
-    func stopSound(atPath path: String) -> Bool {
-        return self.removeSound(atPath: path)
-    }
-    
-    /// Use this method to know if a sound if playing.
-    ///
-    /// - Parameter path: the path of the sound.
-    /// - Returns: a boolean to indicate if sound is playing.
-    func isSoundPlaying(atPath path: String) -> Bool {
-        return self.sounds.contains { $0.name == NSSound.Name(path) }
-    }
-    
-    // MARK: Private methods
-    
-    private func removeSound(atPath path: String) -> Bool {
+    func stopSound(_ object: Sound) -> Bool {
         
         var stopped = false
         var indexToRemove: Int?
         
-        for (index, sound) in self.sounds.enumerated() {
-            if sound.name == NSSound.Name(path) {
-                stopped = sound.stop()
+        for (index, tuple) in self.repeatingSounds.enumerated() {
+            if tuple.object == object {
+                stopped = tuple.sound.stop()
                 indexToRemove = index
                 break
             }
         }
         
         if let indexToRemove = indexToRemove {
-            self.sounds.remove(at: indexToRemove)
+            self.repeatingSounds.remove(at: indexToRemove)
         }
         
         return stopped
+    }
+    
+    /// Use this method to know if a sound if playing.
+    ///
+    /// - Parameter object: the sound object.
+    /// - Returns: a boolean to indicate if sound is playing.
+    func isSoundPlaying(_ object: Sound) -> Bool {
+        return self.repeatingSounds.contains { $0.object == object }
+    }
+    
+    // MARK: Private methods
+    
+    @objc private func managedObjectDidChanged(_ notification: Notification) {
+        
+        let updated = notification.userInfo?[NSUpdatedObjectsKey] as? Set<Sound> ?? []
+        let deleted = notification.userInfo?[NSDeletedObjectsKey] as? Set<Sound> ?? []
+        let all = deleted + updated.filter { $0.repeatEnabled?.boolValue == false }
+        
+        // Try to stop all filtered sounds
+        all.forEach {
+            self.stopSound($0)
+        }
     }
 }
