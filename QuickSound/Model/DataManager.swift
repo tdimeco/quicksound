@@ -2,29 +2,28 @@
 //  DataManager.swift
 //  QuickSound
 //
-//  Created by playadz on 22/03/2016.
+//  Created by Nicolas HOAREAU on 22/03/2016.
 //  Copyright © 2016 Thomas Di Meco. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-
 class DataManager {
+    
+    // MARK: Properties
     
     let managedObjectContext: NSManagedObjectContext
     let managedObjectModel: NSManagedObjectModel
     let storeCoordinator: NSPersistentStoreCoordinator
     
+    // MARK: Methods
     
-    /**
-     DataManager initializer
-     
-     - parameter storeUrl: the URL of the store
-     - parameter modelUrl: the URL of the model
-     
-     - returns: A dataManager initialized
-     */
+    /// DataManager initializer.
+    ///
+    /// - Parameters:
+    ///   - storeUrl: the URL of the store.
+    ///   - modelUrl: the URL of the model.
     init(storeUrl: URL, andModelUrl modelUrl: URL) {
         
         // Init managed object model

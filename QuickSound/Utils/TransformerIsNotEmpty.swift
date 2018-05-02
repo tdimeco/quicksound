@@ -8,11 +8,10 @@
 
 import Foundation
 
-
 @objc(TransformerIsNotEmpty)
 class TransformerIsNotEmpty: ValueTransformer {
     
-    // MARK: - Value transformer
+    // MARK: Value transformer
     
     override class func allowsReverseTransformation() -> Bool {
         return false

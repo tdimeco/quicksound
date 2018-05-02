@@ -8,16 +8,18 @@
 
 import Cocoa
 
-
 class PopoverViewController: NSViewController {
+    
+    // MARK: Properties
+    
+    private let soundManager = SoundManager()
+    
+    // MARK: Outlets
     
     @IBOutlet var soundsArrayController: NSArrayController!
     @IBOutlet weak var tableView: NSTableView!
     
-    private let soundManager = SoundManager()
-    
-    
-    // MARK: - Lifecycle
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +37,10 @@ class PopoverViewController: NSViewController {
         self.tableView.deselectAll(nil)        
     }
     
-    
-    // MARK: - UI actions
+    // MARK: UI actions
     
     @IBAction func tableViewRowDoubleClicked(_ tableView: NSTableView) {
+        
         guard tableView.clickedRow >= 0 else { return }
         guard let arrangedObjects = self.soundsArrayController.arrangedObjects as? [Any] else { return }
         guard let soundObject = arrangedObjects[tableView.clickedRow] as? Sound else { return }
@@ -48,7 +50,7 @@ class PopoverViewController: NSViewController {
         let filePath = soundObject.filePath!
         
         if repeatEnabled && self.soundManager.isSoundPlaying(atPath: filePath) {
-            _ = self.soundManager.stopSound(atPath: filePath)
+            self.soundManager.stopSound(atPath: filePath)
         } else {
             self.soundManager.playSound(atPath: filePath, repeatSound: repeatEnabled)
         }
@@ -65,12 +67,12 @@ class PopoverViewController: NSViewController {
         
         // Open panel
         let result = openPanel.runModal()
-        if result == NSFileHandlingPanelOKButton {
+        if result == .OK {
             
             // Save each selected sound
             for fileURL in openPanel.urls {
                 let filePath = fileURL.absoluteString
-                _ = Sound.createSound(withPath: filePath, inContext: AppDelegate.dataManager.managedObjectContext)
+                Sound.createSound(withPath: filePath, inContext: AppDelegate.dataManager.managedObjectContext)
             }
             
             // Save the context
@@ -88,10 +90,10 @@ class PopoverViewController: NSViewController {
     }
     
     @IBAction func showAboutWindow(_ sender: AnyObject) {
-        NSApplication.shared().orderFrontStandardAboutPanel(sender)
+        NSApplication.shared.orderFrontStandardAboutPanel(sender)
     }
     
     @IBAction func quitApplication(_ sender: AnyObject) {
-        NSApplication.shared().terminate(sender)
+        NSApplication.shared.terminate(sender)
     }
 }

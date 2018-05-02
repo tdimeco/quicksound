@@ -1,9 +1,9 @@
 
-# ![image](https://raw.githubusercontent.com/tdimeco/QuickSound/develop/QuickSound/Assets.xcassets/AppIcon.appiconset/icon_32x32.png) QuickSound
+# ![image](https://raw.githubusercontent.com/tdimeco/QuickSound/develop/QuickSound/Resources/Assets.xcassets/AppIcon.appiconset/icon_32x32.png) QuickSound
 
-**Quickly play sounds from the OS X status bar.**
+**Quickly play sounds from the macOS status bar.**
 
-Compatible with OS X 10.10+
+Compatible with macOS 10.11+
 
 ![screenshot](https://raw.githubusercontent.com/tdimeco/QuickSound/develop/Documentation/Screenshot.png)
 
@@ -12,10 +12,10 @@ Compatible with OS X 10.10+
 
 Current features are:
 
-- Status bar integration
-- Add short sounds from your hard drive (supported formats are OS X standard ones, like AIFF, WAVE, MP3...)
-- Quickly play a sound by double-clicking on it
-- You can choose sounds you want to repeat forever (double-click on it to start and stop it)
+- Status bar integration.
+- Add short sounds from your hard drive (supported formats are macOS standard ones, like AIFF, WAVE, MP3...).
+- Quickly play a sound by double-clicking on it.
+- You can choose sounds you want to repeat forever (double-click on it to start and stop it).
 
 
 ## Download

@@ -8,14 +8,16 @@
 
 import Cocoa
 
+// MARK: - AppDelegate
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    // MARK: Properties
+    
     private let statusItemController = StatusItemController()
     
-    
-    // MARK: - Core Data
+    // MARK: Core Data
     
     static let storeUrl = AppDelegate.applicationDocumentsDirectory.appendingPathComponent("QuickSound.sqlite")
     static let modelUrl = Bundle.main.url(forResource: "Model", withExtension: "momd")!
@@ -27,14 +29,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let applicationSupportDirectoryURL = URL(fileURLWithPath:paths.first!, isDirectory: true)
         let appDirectory = applicationSupportDirectoryURL.appendingPathComponent("QuickSound", isDirectory: true)
         
-        _ = try? FileManager.default.createDirectory(at: appDirectory, withIntermediateDirectories: true, attributes: nil)
+        try? FileManager.default.createDirectory(at: appDirectory, withIntermediateDirectories: true, attributes: nil)
         
         return appDirectory
         
     }()
     
-    
-    // MARK: - Application delegate
+    // MARK: Application delegate
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         
@@ -47,9 +48,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Save the Core Data context
         AppDelegate.dataManager.saveContext()
     }
-    
-    
-    // MARK: - Updates
+}
+
+// MARK: - Updates
+
+extension AppDelegate {
     
     func checkForUpdates() {
         
@@ -58,7 +61,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             // Get local/remote infos
             let localPlist = Bundle.main.infoDictionary
-            let remotePlist = NSDictionary(contentsOf: Constants.UpdatePlistURL)
+            let remotePlist = NSDictionary(contentsOf: Constants.updatePlistURL)
             
             // Check new version
             if let localVersion = localPlist?["CFBundleVersion"] as? String, let remoteVersion = remotePlist?["CFBundleVersion"] as? String {
@@ -81,8 +84,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         alert.addButton(withTitle: NSLocalizedString("Alert.Update.Cancel", comment: ""))
         
         let result = alert.runModal()
-        if result == NSAlertFirstButtonReturn {
-            NSWorkspace.shared().open(Constants.UpdatesPageURL)
+        if result == .alertFirstButtonReturn {
+            NSWorkspace.shared.open(Constants.updatesPageURL)
         }
     }
 }

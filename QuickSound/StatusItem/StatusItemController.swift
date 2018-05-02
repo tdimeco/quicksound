@@ -8,39 +8,37 @@
 
 import Cocoa
 
-
-class StatusItemController: NSObject {
+class StatusItemController {
+    
+    // MARK: Properties
     
     private let statusItem: NSStatusItem
     private let popover: NSPopover
     
+    // MARK: Lifecycle
     
-    // MARK: - Lifecycle
-    
-    override init() {
+    init() {
         
         // Create status item and popover
-        self.statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+        self.statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         self.popover = NSPopover()
-        super.init()
         
         // Setup status item
         let statusButton = self.statusItem.button!
         statusButton.title = "♬"
         statusButton.target = self
-        statusButton.action = #selector(StatusItemController.statusItemClicked(_:))
-        statusButton.sendAction(on: NSEventMask(rawValue: UInt64(NSEventMask.leftMouseUp.rawValue | NSEventMask.rightMouseUp.rawValue)))
+        statusButton.action = #selector(statusItemClicked(_:))
+        statusButton.sendAction(on: [.leftMouseUp, .rightMouseUp])
         
         // Setup popover
         self.popover.behavior = .transient
-        self.popover.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
-        self.popover.contentViewController = PopoverViewController(nibName: "PopoverViewController", bundle: nil)
+        self.popover.appearance = NSAppearance(named: .vibrantLight)
+        self.popover.contentViewController = PopoverViewController(nibName: NSNib.Name("PopoverViewController"), bundle: nil)
     }
     
+    // MARK: Status item
     
-    // MARK: - Status item
-    
-    func statusItemClicked(_ sender: AnyObject) {
+    @objc func statusItemClicked(_ sender: AnyObject) {
         if self.popover.isShown {
             self.closePopover()
         } else {
@@ -48,8 +46,7 @@ class StatusItemController: NSObject {
         }
     }
     
-    
-    // MARK: - Popover
+    // MARK: Popover
     
     func openPopover() {
         

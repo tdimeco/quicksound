@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Utils {
     
     static func filePathToFileNameWithoutExtension(_ filePath: String) -> String? {
