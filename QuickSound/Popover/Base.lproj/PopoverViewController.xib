@@ -53,8 +53,8 @@
                                                         <rect key="frame" x="29" y="7" width="209" height="19"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Sound name" id="zgU-2Z-lTN">
                                                             <font key="font" metaFont="system" size="16"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
                                                             <binding destination="33t-ly-sub" name="value" keyPath="objectValue.name" id="Ona-Qe-XOe">
@@ -68,8 +68,8 @@
                                                         <rect key="frame" x="8" y="8" width="17" height="18"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="♬" id="3dT-AU-yAM">
                                                             <font key="font" metaFont="system" size="14"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
                                                     <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3UO-en-eQC">
@@ -123,7 +123,7 @@
                     <rect key="frame" x="88" y="136" width="100" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="No sounds" id="Eop-gp-PbZ">
                         <font key="font" metaFont="systemMedium" size="20"/>
-                        <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
@@ -220,7 +220,7 @@ CA
                 <constraint firstAttribute="bottom" secondItem="tb3-Le-g5B" secondAttribute="bottom" id="u9a-ok-HcB"/>
                 <constraint firstAttribute="bottom" secondItem="ch7-h8-dHD" secondAttribute="bottom" constant="28" id="wkQ-GE-dYq"/>
             </constraints>
-            <point key="canvasLocation" x="245" y="293"/>
+            <point key="canvasLocation" x="244.5" y="292.5"/>
         </customView>
         <arrayController mode="entity" entityName="Sound" automaticallyPreparesContent="YES" avoidsEmptySelection="NO" id="XaV-0I-8yP">
             <declaredKeys>

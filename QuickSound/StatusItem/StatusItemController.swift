@@ -32,8 +32,15 @@ class StatusItemController {
         
         // Setup popover
         self.popover.behavior = .transient
-        self.popover.appearance = NSAppearance(named: .vibrantLight)
-        self.popover.contentViewController = PopoverViewController(nibName: NSNib.Name("PopoverViewController"), bundle: nil)
+        
+        if #available(macOS 10.14, *) {
+            // Use system default appearance
+        } else {
+            // Force light and not transparent appearance
+            self.popover.appearance = NSAppearance(named: .aqua)
+        }
+        
+        self.popover.contentViewController = PopoverViewController(nibName: "PopoverViewController", bundle: nil)
     }
     
     // MARK: Status item
