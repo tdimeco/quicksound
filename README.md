@@ -3,7 +3,7 @@
 
 **Quickly play sounds from the macOS status bar.**
 
-Compatible with macOS 10.11+
+Compatible with macOS 10.12+
 
 ![screenshot](https://raw.githubusercontent.com/tdimeco/QuickSound/develop/Documentation/Screenshot.png)
 

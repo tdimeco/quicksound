@@ -41,12 +41,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Check for updates
         self.checkForUpdates()
+        
+        // Matomo tracking
+        Tracking.track(view: ["startup"])
     }
     
     func applicationWillTerminate(_ notification: Notification) {
         
         // Save the Core Data context
         AppDelegate.dataManager.saveContext()
+        
+        // Matomo tracking
+        Tracking.dispatch()
     }
 }
 
