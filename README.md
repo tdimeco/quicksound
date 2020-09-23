@@ -1,11 +1,11 @@
 
-# ![image](https://raw.githubusercontent.com/tdimeco/QuickSound/develop/QuickSound/Resources/Assets.xcassets/AppIcon.appiconset/icon_32x32.png) QuickSound
+# ![image](https://raw.githubusercontent.com/tdimeco/QuickSound/master/QuickSound/Resources/Assets.xcassets/AppIcon.appiconset/icon_32x32.png) QuickSound
 
 **Quickly play sounds from the macOS status bar.**
 
 Compatible with macOS 10.12+
 
-![screenshot](https://raw.githubusercontent.com/tdimeco/QuickSound/develop/Documentation/Screenshot.png)
+![screenshot](https://raw.githubusercontent.com/tdimeco/QuickSound/master/Documentation/Screenshot.png)
 
 
 ## Features
