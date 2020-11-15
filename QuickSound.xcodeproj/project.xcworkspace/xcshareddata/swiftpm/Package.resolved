@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MatomoTracker",
+        "repositoryURL": "https://github.com/matomo-org/matomo-sdk-ios",
+        "state": {
+          "branch": null,
+          "revision": "2c1eeeea465652c8b55f590d199e2189f15816ac",
+          "version": "7.2.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
