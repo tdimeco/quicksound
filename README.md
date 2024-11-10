@@ -1,12 +1,10 @@
-
-# ![image](https://raw.githubusercontent.com/tdimeco/QuickSound/master/QuickSound/Resources/Assets.xcassets/AppIcon.appiconset/icon_32x32.png) QuickSound
+# ![image](https://raw.githubusercontent.com/tdimeco/quicksound/main/QuickSound/Resources/Assets.xcassets/AppIcon.appiconset/icon_32x32.png) QuickSound
 
 **Quickly play sounds from the macOS status bar.**
 
 Compatible with macOS 11+
 
-![screenshot](https://raw.githubusercontent.com/tdimeco/QuickSound/master/Documentation/Screenshot.png)
-
+![screenshot](https://raw.githubusercontent.com/tdimeco/quicksound/main/Documentation/Screenshot.png)
 
 ## Features
 
@@ -17,19 +15,16 @@ Current features are:
 - Quickly play a sound by double-clicking on it.
 - You can choose sounds you want to repeat forever (double-click on it to start and stop it).
 
-
 ## Download
 
-You can download the app from the [Releases](https://github.com/tdimeco/QuickSound/releases) page.
-
+You can download the app from the [Releases](https://github.com/tdimeco/quicksound/releases) page.
 
 ## Sound samples
 
-Some sound samples can be found in the root `Sounds` folder on GitHub.
-
+Some sound samples can be found in the repository's root folder `Sounds`.
 
 ## Issues
 
-Issues and ongoing features can be found on the [Issues](https://github.com/tdimeco/QuickSound/issues) page.
+Issues and ongoing features can be found on the [Issues](https://github.com/tdimeco/quicksound/issues) page.
 
 Feel free to enhance the app and make pull-requests!
