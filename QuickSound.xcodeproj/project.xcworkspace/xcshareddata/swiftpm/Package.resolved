@@ -1,16 +1,15 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "MatomoTracker",
-        "repositoryURL": "https://github.com/matomo-org/matomo-sdk-ios",
-        "state": {
-          "branch": null,
-          "revision": "2c1eeeea465652c8b55f590d199e2189f15816ac",
-          "version": "7.2.2"
-        }
+  "originHash" : "f7cd9ca8ed61017a9dc908d24f56a4aacdbcec67282d818dfb8b3ab1f388f329",
+  "pins" : [
+    {
+      "identity" : "matomo-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/matomo-org/matomo-sdk-ios",
+      "state" : {
+        "revision" : "82a1f3b18215381e2133d98b7cc09b5a855ff99d",
+        "version" : "7.7.0"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 3
 }
