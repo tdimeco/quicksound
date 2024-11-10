@@ -15,9 +15,23 @@ Current features are:
 - Quickly play a sound by double-clicking on it.
 - You can choose sounds you want to repeat forever (double-click on it to start and stop it).
 
-## Download
+## Installation
+
+### Homebrew
+
+You can install the app using [Homebrew](https://brew.sh/):
+
+```bash
+brew install --cask tdimeco/apps/quicksound
+```
+
+This is the recommended way to install the app.
+The app auto updates with Homebrew.
+
+### Manual
 
 You can download the app from the [Releases](https://github.com/tdimeco/quicksound/releases) page.
+The app does not auto update in this case.
 
 ## Sound samples
 
