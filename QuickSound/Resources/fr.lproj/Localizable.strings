@@ -6,10 +6,5 @@
   Copyright © 2016 Thomas Di Meco. All rights reserved.
 */
 
-"Alert.Update.Title" = "Une nouvelle version est disponible !";
-"Alert.Update.Description" = "Vous pouvez la télécharger la nouvelle version de QuickSound depuis GitHub.";
-"Alert.Update.Download" = "Télécharger";
-"Alert.Update.Cancel" = "Pas maintenant";
-
 "Alert.SoundError.Title" = "Impossible de lire le son";
 "Alert.SoundError.Description" = "Le fichier est invalide ou introuvable.";
