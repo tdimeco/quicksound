@@ -51,9 +51,6 @@ class SoundManager {
         } else if repeatSound {
             self.repeatingSounds.append((object, sound!))
         }
-        
-        // Matomo tracking
-        Tracking.track(eventWithCategory: "sounds", action: "play")
     }
     
     /// Use this method to stop a sound.

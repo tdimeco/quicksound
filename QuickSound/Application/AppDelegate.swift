@@ -37,18 +37,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: Application delegate
     
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        
-        // Matomo tracking
-        Tracking.track(view: ["startup"])
-    }
-    
     func applicationWillTerminate(_ notification: Notification) {
         
         // Save the Core Data context
         AppDelegate.dataManager.saveContext()
-        
-        // Matomo tracking
-        Tracking.dispatch()
     }
 }

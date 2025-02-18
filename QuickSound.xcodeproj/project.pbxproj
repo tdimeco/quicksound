@@ -16,7 +16,6 @@
 		92BE1D861C9C4CA5004F13BB /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D851C9C4CA5004F13BB /* StatusItemController.swift */; };
 		92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D871C9C506B004F13BB /* PopoverViewController.swift */; };
 		92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */; };
-		92F687282561E79700F24B42 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 92F687272561E79700F24B42 /* MatomoTracker */; };
 		E91F8D1B1CA204C700BC1B08 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F8D1A1CA204C700BC1B08 /* Constants.swift */; };
 		E942CF291CA1FBF8004FBCD2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942CF281CA1FBF8004FBCD2 /* Utils.swift */; };
 		E9451AD61DC3E171004845FA /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9451AD81DC3E171004845FA /* PopoverViewController.xib */; };
@@ -52,7 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F687282561E79700F24B42 /* MatomoTracker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +178,6 @@
 			);
 			name = QuickSound;
 			packageProductDependencies = (
-				92F687272561E79700F24B42 /* MatomoTracker */,
 			);
 			productName = QuickSound;
 			productReference = 92BE1D741C9C4B9B004F13BB /* QuickSound.app */;
@@ -194,7 +191,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = "Thomas Di Meco";
 				TargetAttributes = {
 					92BE1D731C9C4B9B004F13BB = {
@@ -218,7 +215,6 @@
 			);
 			mainGroup = 92BE1D6B1C9C4B9B004F13BB;
 			packageReferences = (
-				92F687262561E79700F24B42 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 92BE1D751C9C4B9B004F13BB /* Products */;
@@ -483,25 +479,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		92F687262561E79700F24B42 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/matomo-org/matomo-sdk-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.2.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		92F687272561E79700F24B42 /* MatomoTracker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 92F687262561E79700F24B42 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */;
-			productName = MatomoTracker;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */ = {

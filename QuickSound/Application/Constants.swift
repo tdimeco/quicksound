@@ -9,7 +9,4 @@
 import Foundation
 
 struct Constants {
-    // TODO: Allow the user to disable analytics
-    static let matomoURL = URL(string: "https://analytics.tdimeco.fr/matomo.php")!
-    static let matomoSiteId = "4"
 }

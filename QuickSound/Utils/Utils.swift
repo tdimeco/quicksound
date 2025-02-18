@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import MatomoTracker
 
 struct Utils {
     
@@ -15,25 +14,4 @@ struct Utils {
         guard let lastPathComponent = URL(string: filePath)?.lastPathComponent else { return nil }
         return NSString(string: lastPathComponent).deletingPathExtension
     }
-}
-
-// MARK: - Matomo tracker
-
-struct Tracking {
-    
-    static func track(view: [String]) {
-        MatomoTracker.shared.track(view: view)
-    }
-    
-    static func track(eventWithCategory category: String, action: String) {
-        MatomoTracker.shared.track(eventWithCategory: category, action: action, name: nil, number: nil, url: nil)
-    }
-    
-    static func dispatch() {
-        MatomoTracker.shared.dispatch()
-    }
-}
-
-extension MatomoTracker {
-    static let shared = MatomoTracker(siteId: Constants.matomoSiteId, baseURL: Constants.matomoURL)
 }

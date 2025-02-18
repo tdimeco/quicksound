@@ -54,9 +54,6 @@ class StatusItemController {
         
         // Give the focus to the app
         NSApp.activate(ignoringOtherApps: true)
-        
-        // Matomo tracking
-        Tracking.track(view: ["popover"])
     }
     
     func closePopover() {
