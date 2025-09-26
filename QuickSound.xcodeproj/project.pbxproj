@@ -3,56 +3,40 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		2228E3001CA1B0D00041056A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */; };
-		2228E3061CA1B1CE0041056A /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3041CA1B1CE0041056A /* Sound.swift */; };
-		2228E3081CA1B3380041056A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228E3071CA1B3380041056A /* DataManager.swift */; };
-		3717907A1CA1FADC00A622A5 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371790791CA1FADC00A622A5 /* SoundManager.swift */; };
-		92BE1D781C9C4B9B004F13BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */; };
-		92BE1D7A1C9C4B9B004F13BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BE1D791C9C4B9B004F13BB /* Assets.xcassets */; };
-		92BE1D861C9C4CA5004F13BB /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D851C9C4CA5004F13BB /* StatusItemController.swift */; };
-		92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D871C9C506B004F13BB /* PopoverViewController.swift */; };
-		92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */; };
-		E91F8D1B1CA204C700BC1B08 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F8D1A1CA204C700BC1B08 /* Constants.swift */; };
-		E942CF291CA1FBF8004FBCD2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942CF281CA1FBF8004FBCD2 /* Utils.swift */; };
-		E9451AD61DC3E171004845FA /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9451AD81DC3E171004845FA /* PopoverViewController.xib */; };
-		E9732E171DC3E5C000CD02EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9732E191DC3E5C000CD02EE /* Localizable.strings */; };
-		E9FC49131C9DD93B001C35B3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FC49121C9DD93B001C35B3 /* MainMenu.xib */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		2228E2FF1CA1B0D00041056A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		2228E3041CA1B1CE0041056A /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
-		2228E3071CA1B3380041056A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		371790791CA1FADC00A622A5 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		92BE1D741C9C4B9B004F13BB /* QuickSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92BE1D791C9C4B9B004F13BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		92BE1D7E1C9C4B9B004F13BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92BE1D851C9C4CA5004F13BB /* StatusItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
-		92BE1D871C9C506B004F13BB /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
-		92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerIsNotEmpty.swift; sourceTree = "<group>"; };
-		E91F8D1A1CA204C700BC1B08 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E942CF281CA1FBF8004FBCD2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		E9451AD71DC3E171004845FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PopoverViewController.xib; sourceTree = "<group>"; };
-		E9501694224AE53F00C5883C /* MatomoTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MatomoTracker.framework; path = Carthage/Build/Mac/MatomoTracker.framework; sourceTree = "<group>"; };
-		E9732E141DC3E31B00CD02EE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/PopoverViewController.strings; sourceTree = "<group>"; };
-		E9732E181DC3E5C000CD02EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E9732E1A1DC3E5C200CD02EE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9C2FCB2209A111800001909 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E9FC49121C9DD93B001C35B3 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		926F0C5C2E866CDC00AA6974 /* Exceptions for "QuickSound" folder in "QuickSound" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 92BE1D731C9C4B9B004F13BB /* QuickSound */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		926F0C4B2E866CDC00AA6974 /* QuickSound */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				926F0C5C2E866CDC00AA6974 /* Exceptions for "QuickSound" folder in "QuickSound" target */,
+			);
+			path = QuickSound;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		92BE1D711C9C4B9B004F13BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -61,7 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C2FCB2209A111800001909 /* README.md */,
-				92BE1D761C9C4B9B004F13BB /* QuickSound */,
+				926F0C4B2E866CDC00AA6974 /* QuickSound */,
 				92BE1D751C9C4B9B004F13BB /* Products */,
 				E9501693224AE53F00C5883C /* Frameworks */,
 			);
@@ -75,90 +59,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		92BE1D761C9C4B9B004F13BB /* QuickSound */ = {
-			isa = PBXGroup;
-			children = (
-				E9C2FCB1209A04FF00001909 /* Application */,
-				E9C2FCAB209A044900001909 /* Manager */,
-				E9C2FCAC209A047400001909 /* StatusItem */,
-				E9C2FCAD209A049F00001909 /* Popover */,
-				E9C2FCAE209A04C100001909 /* Model */,
-				E9C2FCAF209A04DA00001909 /* Utils */,
-				E9C2FCB0209A04E900001909 /* Resources */,
-				92BE1D7E1C9C4B9B004F13BB /* Info.plist */,
-			);
-			path = QuickSound;
-			sourceTree = "<group>";
-		};
 		E9501693224AE53F00C5883C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E9501694224AE53F00C5883C /* MatomoTracker.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E9C2FCAB209A044900001909 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				371790791CA1FADC00A622A5 /* SoundManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		E9C2FCAC209A047400001909 /* StatusItem */ = {
-			isa = PBXGroup;
-			children = (
-				92BE1D851C9C4CA5004F13BB /* StatusItemController.swift */,
-			);
-			path = StatusItem;
-			sourceTree = "<group>";
-		};
-		E9C2FCAD209A049F00001909 /* Popover */ = {
-			isa = PBXGroup;
-			children = (
-				92BE1D871C9C506B004F13BB /* PopoverViewController.swift */,
-				E9451AD81DC3E171004845FA /* PopoverViewController.xib */,
-			);
-			path = Popover;
-			sourceTree = "<group>";
-		};
-		E9C2FCAE209A04C100001909 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */,
-				2228E3071CA1B3380041056A /* DataManager.swift */,
-				2228E3041CA1B1CE0041056A /* Sound.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E9C2FCAF209A04DA00001909 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				E942CF281CA1FBF8004FBCD2 /* Utils.swift */,
-				92BE1D901C9C6E8F004F13BB /* TransformerIsNotEmpty.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		E9C2FCB0209A04E900001909 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E9FC49121C9DD93B001C35B3 /* MainMenu.xib */,
-				92BE1D791C9C4B9B004F13BB /* Assets.xcassets */,
-				E9732E191DC3E5C000CD02EE /* Localizable.strings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		E9C2FCB1209A04FF00001909 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				92BE1D771C9C4B9B004F13BB /* AppDelegate.swift */,
-				E91F8D1A1CA204C700BC1B08 /* Constants.swift */,
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,11 +79,10 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
+			fileSystemSynchronizedGroups = (
+				926F0C4B2E866CDC00AA6974 /* QuickSound */,
 			);
 			name = QuickSound;
-			packageProductDependencies = (
-			);
 			productName = QuickSound;
 			productReference = 92BE1D741C9C4B9B004F13BB /* QuickSound.app */;
 			productType = "com.apple.product-type.application";
@@ -191,7 +95,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 2600;
 				ORGANIZATIONNAME = "Thomas Di Meco";
 				TargetAttributes = {
 					92BE1D731C9C4B9B004F13BB = {
@@ -216,7 +120,7 @@
 			mainGroup = 92BE1D6B1C9C4B9B004F13BB;
 			packageReferences = (
 			);
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = 92BE1D751C9C4B9B004F13BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -229,63 +133,25 @@
 /* Begin PBXResourcesBuildPhase section */
 		92BE1D721C9C4B9B004F13BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				92BE1D7A1C9C4B9B004F13BB /* Assets.xcassets in Resources */,
-				E9732E171DC3E5C000CD02EE /* Localizable.strings in Resources */,
-				E9451AD61DC3E171004845FA /* PopoverViewController.xib in Resources */,
-				E9FC49131C9DD93B001C35B3 /* MainMenu.xib in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92BE1D701C9C4B9B004F13BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				92BE1D861C9C4CA5004F13BB /* StatusItemController.swift in Sources */,
-				E91F8D1B1CA204C700BC1B08 /* Constants.swift in Sources */,
-				2228E3081CA1B3380041056A /* DataManager.swift in Sources */,
-				92BE1D911C9C6E8F004F13BB /* TransformerIsNotEmpty.swift in Sources */,
-				2228E3001CA1B0D00041056A /* Model.xcdatamodeld in Sources */,
-				E942CF291CA1FBF8004FBCD2 /* Utils.swift in Sources */,
-				92BE1D891C9C506B004F13BB /* PopoverViewController.swift in Sources */,
-				2228E3061CA1B1CE0041056A /* Sound.swift in Sources */,
-				3717907A1CA1FADC00A622A5 /* SoundManager.swift in Sources */,
-				92BE1D781C9C4B9B004F13BB /* AppDelegate.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		E9451AD81DC3E171004845FA /* PopoverViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9451AD71DC3E171004845FA /* Base */,
-				E9732E141DC3E31B00CD02EE /* fr */,
-			);
-			name = PopoverViewController.xib;
-			sourceTree = "<group>";
-		};
-		E9732E191DC3E5C000CD02EE /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9732E181DC3E5C000CD02EE /* Base */,
-				E9732E1A1DC3E5C200CD02EE /* fr */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		92BE1D7F1C9C4B9B004F13BB /* Debug */ = {
+		92BE1D7F1C9C4B9B004F13BB /* Debug configuration for PBXProject "QuickSound" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -315,6 +181,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = LU8GV6C284;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -335,15 +202,17 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		92BE1D801C9C4B9B004F13BB /* Release */ = {
+		92BE1D801C9C4B9B004F13BB /* Release configuration for PBXProject "QuickSound" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -373,6 +242,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = LU8GV6C284;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -386,12 +256,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		92BE1D821C9C4B9B004F13BB /* Debug */ = {
+		92BE1D821C9C4B9B004F13BB /* Debug configuration for PBXNativeTarget "QuickSound" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -401,7 +272,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = LU8GV6C284;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuickSound/Info.plist;
@@ -424,7 +294,7 @@
 			};
 			name = Debug;
 		};
-		92BE1D831C9C4B9B004F13BB /* Release */ = {
+		92BE1D831C9C4B9B004F13BB /* Release configuration for PBXNativeTarget "QuickSound" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -434,7 +304,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = LU8GV6C284;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuickSound/Info.plist;
@@ -463,35 +332,20 @@
 		92BE1D6F1C9C4B9B004F13BB /* Build configuration list for PBXProject "QuickSound" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				92BE1D7F1C9C4B9B004F13BB /* Debug */,
-				92BE1D801C9C4B9B004F13BB /* Release */,
+				92BE1D7F1C9C4B9B004F13BB /* Debug configuration for PBXProject "QuickSound" */,
+				92BE1D801C9C4B9B004F13BB /* Release configuration for PBXProject "QuickSound" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		92BE1D811C9C4B9B004F13BB /* Build configuration list for PBXNativeTarget "QuickSound" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				92BE1D821C9C4B9B004F13BB /* Debug */,
-				92BE1D831C9C4B9B004F13BB /* Release */,
+				92BE1D821C9C4B9B004F13BB /* Debug configuration for PBXNativeTarget "QuickSound" */,
+				92BE1D831C9C4B9B004F13BB /* Release configuration for PBXNativeTarget "QuickSound" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2228E2FE1CA1B0D00041056A /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2228E2FF1CA1B0D00041056A /* Model.xcdatamodel */,
-			);
-			currentVersion = 2228E2FF1CA1B0D00041056A /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 92BE1D6C1C9C4B9B004F13BB /* Project object */;
 }
