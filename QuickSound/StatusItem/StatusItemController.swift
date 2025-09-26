@@ -25,7 +25,7 @@ class StatusItemController {
         
         // Setup status item
         let statusButton = self.statusItem.button!
-        statusButton.title = "♬"
+        statusButton.image = NSImage(systemSymbolName: "music.note", accessibilityDescription: nil)
         statusButton.target = self
         statusButton.action = #selector(statusItemClicked(_:))
         statusButton.sendAction(on: [.leftMouseUp, .rightMouseUp])
