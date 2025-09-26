@@ -1,10 +1,8 @@
-# ![image](https://raw.githubusercontent.com/tdimeco/quicksound/main/QuickSound/Resources/Assets.xcassets/AppIcon.appiconset/icon_32x32.png) QuickSound
+# <img src="https://raw.githubusercontent.com/tdimeco/quicksound/main/Documentation/AppIcon@2x.png" alt="" style="width:32px; height:auto;"> QuickSound
 
 **Quickly play sounds from the macOS status bar.**
 
-Compatible with macOS 12+
-
-![screenshot](https://raw.githubusercontent.com/tdimeco/quicksound/main/Documentation/Screenshot.png)
+<img src="https://raw.githubusercontent.com/tdimeco/quicksound/main/Documentation/Screenshot@2x.png" alt="Screenshot" style="width:338px; height:auto;">
 
 ## Features
 
@@ -16,6 +14,8 @@ Current features are:
 - You can choose sounds you want to repeat forever (double-click on it to start and stop it).
 
 ## Installation
+
+Compatible with macOS 12+
 
 ### Homebrew
 
