@@ -9,7 +9,7 @@
 import Foundation
 
 @objc(TransformerIsNotEmpty)
-class TransformerIsNotEmpty: ValueTransformer {
+nonisolated class TransformerIsNotEmpty: ValueTransformer {
     
     // MARK: Value transformer
     

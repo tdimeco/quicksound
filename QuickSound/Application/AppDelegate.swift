@@ -10,7 +10,7 @@ import Cocoa
 
 // MARK: - AppDelegate
 
-@NSApplicationMain
+@main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: Properties
@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     static let modelUrl = Bundle.main.url(forResource: "Model", withExtension: "momd")!
     static let dataManager = DataManager(storeUrl: AppDelegate.storeUrl, andModelUrl:  AppDelegate.modelUrl)
     
-    static var applicationDocumentsDirectory: URL = {
+    static let applicationDocumentsDirectory: URL = {
         
         let paths = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)
         let applicationSupportDirectoryURL = URL(fileURLWithPath:paths.first!, isDirectory: true)

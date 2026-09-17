@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import CoreData
 
 class SoundManager {
     
