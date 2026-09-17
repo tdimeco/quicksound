@@ -69,7 +69,7 @@
                                                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" alternateImage="repeat.circle.fill" catalog="system" state="on" imageScaling="proportionallyDown" inset="2" id="m00-4s-AuG">
                                                             <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                             <font key="font" textStyle="title2" name=".SFNS-Regular"/>
-                                                            <imageReference key="image" image="repeat.circle" catalog="system" symbolScale="default" variableValue="0.80000000000000004"/>
+                                                            <imageReference key="image" image="repeat.circle" catalog="system" symbolScale="default"/>
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="autoRepeatClicked:" target="-2" id="LXi-yl-sxd"/>
