@@ -15,7 +15,7 @@ Current features are:
 
 ## Installation
 
-Compatible with macOS 12+
+Compatible with macOS 14+ (Sonoma).
 
 ### Homebrew
 

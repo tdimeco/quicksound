@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 90;
+	objectVersion = 110;
 	objects = {
 
 /* Begin PBXFileReference section */
@@ -95,7 +95,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2700;
 				ORGANIZATIONNAME = "Thomas Di Meco";
 				TargetAttributes = {
 					92BE1D731C9C4B9B004F13BB = {
@@ -120,7 +120,7 @@
 			mainGroup = 92BE1D6B1C9C4B9B004F13BB;
 			packageReferences = (
 			);
-			preferredProjectObjectVersion = 90;
+			preferredProjectObjectVersion = 110;
 			productRefGroup = 92BE1D751C9C4B9B004F13BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -285,7 +285,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.tdimeco.quicksound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -317,7 +317,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.tdimeco.quicksound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
