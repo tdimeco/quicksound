@@ -8,3 +8,6 @@
 
 "Alert.SoundError.Title" = "Unable to play the sound";
 "Alert.SoundError.Description" = "The sound file is invalid or not found.";
+
+"Menu.SoundOutput" = "Sound Output";
+"Menu.SoundOutput.SystemDefault" = "System Default";

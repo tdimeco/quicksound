@@ -9,6 +9,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PopoverViewController" customModule="QuickSound" customModuleProvider="target">
             <connections>
+                <outlet property="moreMenu" destination="8ji-Hn-oLA" id="mMn-0u-Tlt"/>
                 <outlet property="soundsArrayController" destination="XaV-0I-8yP" id="vV1-gW-Ra7"/>
                 <outlet property="tableView" destination="Mmb-31-dOi" id="uha-ia-28t"/>
                 <outlet property="view" destination="at7-VE-jKz" id="1xV-xL-aJw"/>
