@@ -15,11 +15,15 @@ class SoundManager {
     // MARK: Properties
     
     private var repeatingSounds: [(object: Sound, sound: NSSound)] = []
+    private var outputDeviceUID = AudioOutputManager.effectiveDeviceUID
     
     // MARK: Lifecycle
     
     init(managedObjectContext: NSManagedObjectContext) {
         NotificationCenter.default.addObserver(self, selector: #selector(managedObjectDidChanged(_:)), name: .NSManagedObjectContextObjectsDidChange, object: managedObjectContext)
+        AudioOutputManager.observeDeviceChanges { [weak self] in
+            self?.outputDevicesDidChange()
+        }
     }
     
     deinit {
@@ -93,6 +97,7 @@ class SoundManager {
     /// Use this method to move repeating sounds to the current output device.
     func applyOutputDevice() {
         let deviceUID = AudioOutputManager.effectiveDeviceUID
+        self.outputDeviceUID = deviceUID
         for tuple in self.repeatingSounds {
             tuple.sound.stop()
             tuple.sound.playbackDeviceIdentifier = deviceUID
@@ -101,6 +106,14 @@ class SoundManager {
     }
 
     // MARK: Private methods
+    
+    private func outputDevicesDidChange() {
+        
+        // Move repeating sounds when the selected device is disconnected or reconnected
+        if AudioOutputManager.effectiveDeviceUID != self.outputDeviceUID {
+            self.applyOutputDevice()
+        }
+    }
     
     @objc private func managedObjectDidChanged(_ notification: Notification) {
         

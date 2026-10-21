@@ -54,6 +54,16 @@ enum AudioOutputManager {
             .sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
     }
 
+    /// Use this method to be notified when devices are connected or disconnected.
+    ///
+    /// - Parameter handler: called on the main queue after each change.
+    static func observeDeviceChanges(_ handler: @escaping @MainActor () -> Void) {
+        var address = AudioObjectPropertyAddress(mSelector: kAudioHardwarePropertyDevices, mScope: kAudioObjectPropertyScopeGlobal, mElement: kAudioObjectPropertyElementMain)
+        AudioObjectAddPropertyListenerBlock(AudioObjectID(kAudioObjectSystemObject), &address, .main) { _, _ in
+            MainActor.assumeIsolated { handler() }
+        }
+    }
+
     // MARK: Private methods
 
     private static func hasOutputStreams(_ deviceID: AudioDeviceID) -> Bool {
