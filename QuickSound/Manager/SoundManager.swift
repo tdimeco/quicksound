@@ -39,7 +39,10 @@ class SoundManager {
         let repeatSound = object.repeatEnabled?.boolValue ?? false
         let sound = NSSound(contentsOf: url, byReference: true)
         sound?.loops = repeatSound
-        
+        // When a device UID is set, play() logs "AudioObjectGetPropertyData: no object with given ID 0".
+        // The warning comes from the system audio stack (AVAudioPlayer does the same) and is harmless.
+        sound?.playbackDeviceIdentifier = AudioOutputManager.effectiveDeviceUID
+
         let successOrNil = sound?.play()
         
         // Show alert
@@ -86,7 +89,17 @@ class SoundManager {
     func isSoundPlaying(_ object: Sound) -> Bool {
         return self.repeatingSounds.contains { $0.object == object }
     }
-    
+
+    /// Use this method to move repeating sounds to the current output device.
+    func applyOutputDevice() {
+        let deviceUID = AudioOutputManager.effectiveDeviceUID
+        for tuple in self.repeatingSounds {
+            tuple.sound.stop()
+            tuple.sound.playbackDeviceIdentifier = deviceUID
+            tuple.sound.play()
+        }
+    }
+
     // MARK: Private methods
     
     @objc private func managedObjectDidChanged(_ notification: Notification) {

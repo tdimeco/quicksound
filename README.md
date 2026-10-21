@@ -12,6 +12,7 @@ Current features are:
 - Add short sounds from your hard drive (supported formats are macOS standard ones, like AIFF, WAVE, MP3...).
 - Quickly play a sound by double-clicking on it.
 - You can choose sounds you want to repeat forever (double-click on it to start and stop it).
+- Choose the sound output device from the "More..." menu.
 
 ## Installation
 
