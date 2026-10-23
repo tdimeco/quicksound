@@ -13,6 +13,7 @@ class PopoverViewController: NSViewController {
     // MARK: Properties
     
     private let soundManager = SoundManager(managedObjectContext: AppDelegate.dataManager.managedObjectContext)
+    private weak var renamingTextField: NSTextField?
     
     // MARK: Outlets
     
@@ -37,10 +38,27 @@ class PopoverViewController: NSViewController {
         outputItem.submenu = outputMenu
         self.moreMenu.insertItem(outputItem, at: 1)
         self.moreMenu.insertItem(.separator(), at: 2)
+        
+        // Add the row context menu
+        let contextMenu = NSMenu()
+        contextMenu.delegate = self
+        contextMenu.autoenablesItems = false
+        let renameItem = NSMenuItem(title: NSLocalizedString("Menu.Rename", comment: ""), action: #selector(renameSoundAction(_:)), keyEquivalent: "")
+        renameItem.target = self
+        contextMenu.addItem(renameItem)
+        let removeItem = NSMenuItem(title: NSLocalizedString("Menu.Remove", comment: ""), action: #selector(removeClickedSoundAction(_:)), keyEquivalent: "")
+        removeItem.target = self
+        contextMenu.addItem(removeItem)
+        self.tableView.menu = contextMenu
     }
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
+        
+        // Commit a rename in progress
+        if self.renamingTextField != nil {
+            self.view.window?.makeFirstResponder(nil)
+        }
         
         // Deselect table view
         self.tableView.deselectAll(nil)        
@@ -92,6 +110,26 @@ class PopoverViewController: NSViewController {
         AppDelegate.dataManager.saveContext()
     }
     
+    @objc func removeClickedSoundAction(_ sender: AnyObject) {
+        guard let soundObject = self.sound(atRow: self.tableView.clickedRow) else { return }
+        self.soundsArrayController.removeObject(soundObject)
+        AppDelegate.dataManager.saveContext()
+    }
+    
+    @objc func renameSoundAction(_ sender: AnyObject) {
+        self.beginRenaming(row: self.tableView.clickedRow)
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        
+        // Return renames the selected sound
+        if event.keyCode == 36 || event.keyCode == 76, self.tableView.selectedRow >= 0 {
+            self.beginRenaming(row: self.tableView.selectedRow)
+        } else {
+            super.keyDown(with: event)
+        }
+    }
+    
     @IBAction func autoRepeatClicked(_ sender: AnyObject) {
         AppDelegate.dataManager.saveContext()
     }
@@ -108,6 +146,65 @@ class PopoverViewController: NSViewController {
     @IBAction func quitApplication(_ sender: AnyObject) {
         NSApplication.shared.terminate(sender)
     }
+    
+    // MARK: Private methods
+    
+    private func sound(atRow row: Int) -> Sound? {
+        guard row >= 0, let arrangedObjects = self.soundsArrayController.arrangedObjects as? [Any], row < arrangedObjects.count else { return nil }
+        return arrangedObjects[row] as? Sound
+    }
+    
+    private func beginRenaming(row: Int) {
+        guard let cellView = self.tableView.view(atColumn: 0, row: row, makeIfNecessary: false) as? NSTableCellView else { return }
+        guard let textField = cellView.textField else { return }
+        
+        // Make the name field editable until editing ends
+        textField.isEditable = true
+        textField.delegate = self
+        self.renamingTextField = textField
+        self.view.window?.makeFirstResponder(textField)
+        textField.currentEditor()?.selectAll(nil)
+    }
+}
+
+// MARK: - NSTextFieldDelegate
+
+extension PopoverViewController: NSTextFieldDelegate {
+    
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        
+        // Escape cancels the rename
+        if commandSelector == #selector(NSResponder.cancelOperation(_:)) {
+            control.abortEditing()
+            self.endRenaming(control as? NSTextField)
+            return true
+        }
+        return false
+    }
+    
+    func controlTextDidEndEditing(_ notification: Notification) {
+        
+        let textField = notification.object as? NSTextField
+        guard let cellView = textField?.superview as? NSTableCellView, let soundObject = cellView.objectValue as? Sound else { return }
+        
+        // An empty name falls back to the file name
+        let name = soundObject.name?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        if name.isEmpty, let filePath = soundObject.filePath {
+            soundObject.name = Utils.filePathToFileNameWithoutExtension(filePath)
+        } else if name != soundObject.name {
+            soundObject.name = name
+        }
+        
+        self.endRenaming(textField)
+        AppDelegate.dataManager.saveContext()
+        self.soundsArrayController.rearrangeObjects()
+    }
+    
+    private func endRenaming(_ textField: NSTextField?) {
+        textField?.isEditable = false
+        self.renamingTextField = nil
+        self.view.window?.makeFirstResponder(self.tableView)
+    }
 }
 
 // MARK: - NSMenuDelegate
@@ -115,6 +212,13 @@ class PopoverViewController: NSViewController {
 extension PopoverViewController: NSMenuDelegate {
     
     func menuNeedsUpdate(_ menu: NSMenu) {
+        
+        // Row context menu: only enabled on a row
+        if menu === self.tableView.menu {
+            let hasClickedRow = self.tableView.clickedRow >= 0
+            menu.items.forEach { $0.isEnabled = hasClickedRow }
+            return
+        }
         
         let selectedUID = AudioOutputManager.effectiveDeviceUID
         menu.removeAllItems()
