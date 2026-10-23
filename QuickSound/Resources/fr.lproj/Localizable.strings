@@ -11,3 +11,6 @@
 
 "Menu.SoundOutput" = "Sortie audio";
 "Menu.SoundOutput.SystemDefault" = "Par défaut du système";
+
+"Menu.Rename" = "Renommer";
+"Menu.Remove" = "Supprimer";
